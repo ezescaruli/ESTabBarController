@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ..
 
 SPEC CHECKSUMS:
-  ESTabBarController: ac7ea4870edd10d7bbd7a86e4b45a35e5ac6b0b5
+  ESTabBarController: 760e984297c109514026275d46367ce3bd0ef8ba
 
 COCOAPODS: 0.35.0
