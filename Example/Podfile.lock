@@ -1,0 +1,14 @@
+PODS:
+  - ESTabBarController (0.1.0)
+
+DEPENDENCIES:
+  - ESTabBarController (from `..`)
+
+EXTERNAL SOURCES:
+  ESTabBarController:
+    :path: ..
+
+SPEC CHECKSUMS:
+  ESTabBarController: ac7ea4870edd10d7bbd7a86e4b45a35e5ac6b0b5
+
+COCOAPODS: 0.35.0
