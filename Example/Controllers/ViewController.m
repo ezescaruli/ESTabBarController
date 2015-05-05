@@ -6,22 +6,26 @@
 //  Copyright (c) 2015 Ezequiel Scaruli. All rights reserved.
 //
 
+#import <ESTabBarController/ESTabBarController.h>
+
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    ESTabBarController *tabBarController = [ESTabBarController instance];
+    
+    [self addChildViewController:tabBarController];
+    
+    [self.view addSubview:tabBarController.view];
+    tabBarController.view.frame = self.view.bounds;
+    
+    [tabBarController didMoveToParentViewController:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

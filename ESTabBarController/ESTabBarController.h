@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ESTabBarController : UIViewController
+
++ (instancetype)instance;
 
 @end
