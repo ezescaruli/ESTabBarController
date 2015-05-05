@@ -10,9 +10,22 @@
 
 typedef void (^ESTabBarAction)(void);
 
+
 @interface ESTabBarController : UIViewController
 
+
+/// Color to use for when a tab bar button is selected.
+@property (nonatomic, strong) UIColor *selectedColor;
+
+/// Background color for the view that contains the buttons.
+@property (nonatomic, strong) UIColor *buttonsBackgroundColor;
+
+
+/**
+ Initializes the tab bar with the amount of controllers that it will show.
+ */
 - (instancetype)initWithControllersAmount:(NSInteger)controllersAmount;
+
 
 /**
  Sets the view controller to be shown when tapping a button at a specific
@@ -28,5 +41,6 @@ typedef void (^ESTabBarAction)(void);
  */
 - (void)setAction:(ESTabBarAction)action
           atIndex:(NSInteger)index;
+
 
 @end

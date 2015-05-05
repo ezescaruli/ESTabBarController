@@ -8,10 +8,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ESTabBarController:
-    :path: ..
+    :path: ".."
 
 SPEC CHECKSUMS:
-  ESTabBarController: 9804853881b8c16ce123d009e763970a8bed6f3f
+  ESTabBarController: d6d9a2fac4de700b8cd5803dbe085c8aa2d7dc2f
   UIColor-HexString: f8a5612bd6772fed8db58ee594b42a0b2831750e
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.0

@@ -7,9 +7,12 @@
 //
 
 #import "ESTabBarController.h"
+#import "UIButton+ESTabBar.h"
 
 
 @interface ESTabBarController ()
+
+@property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
 
 @property (nonatomic, strong) NSMutableArray *controllers;
 @property (nonatomic, strong) NSMutableArray *actions;
@@ -72,6 +75,14 @@
 }
 
 
+#pragma mark - Action
+
+
+- (void)tabButtonAction:(UIButton *)button {
+    
+}
+
+
 #pragma mark - Private methods
 
 
@@ -98,6 +109,31 @@
     }
     
     self.buttons = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < self.controllers.count; i++) {
+        UIButton *button = [self createButtonForIndex:i];
+        
+        [self.buttonsContainer addSubview:button];
+        self.buttons[i] = button;
+    }
+    
+    self.buttonsContainer.backgroundColor = self.buttonsBackgroundColor ?: [UIColor lightGrayColor];
+}
+
+
+- (UIButton *)createButtonForIndex:(NSInteger)index {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    UIImage *buttonImage = [self.controllers[index] tabBarItem].image;
+    [button customizeForTabBarWithImage:buttonImage
+                          selectedColor:self.selectedColor ?: [UIColor blackColor]
+                            highlighted:NO];
+    
+    [button addTarget:self
+               action:@selector(tabButtonAction:)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
 }
 
 
