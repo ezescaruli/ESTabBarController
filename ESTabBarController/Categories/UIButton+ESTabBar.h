@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIButton (ESTabBar)
+
+- (void)customizeForTabBarWithImage:(UIImage *)image
+                      selectedColor:(UIColor *)selectedColor
+                        highlighted:(BOOL)highlighted;
 
 @end
