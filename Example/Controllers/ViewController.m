@@ -29,10 +29,31 @@
     
     [tabBarController didMoveToParentViewController:self];
     
-    UIViewController *archiveViewController = [[UIViewController alloc] init];
-    archiveViewController.tabBarItem.image = [UIImage imageNamed:@"archive"];
+    [tabBarController setViewController:[self viewControllerWithImageNamed:@"archive"]
+                                atIndex:0];
     
-    [tabBarController setViewController:archiveViewController atIndex:0];
+    [tabBarController setViewController:[self viewControllerWithImageNamed:@"clock"]
+                                atIndex:1];
+    
+    [tabBarController setViewController:[self viewControllerWithImageNamed:@"target"]
+                                atIndex:2];
+    
+    [tabBarController setViewController:[self viewControllerWithImageNamed:@"map"]
+                                atIndex:3];
+    
+    [tabBarController setViewController:[self viewControllerWithImageNamed:@"globe"]
+                                atIndex:4];
+}
+
+
+#pragma mark - Private methods
+
+
+- (UIViewController *)viewControllerWithImageNamed:(NSString *)imageName {
+    UIViewController *viewController = [[UIViewController alloc] init];
+    viewController.tabBarItem.image = [UIImage imageNamed:imageName];
+    
+    return viewController;
 }
 
 
