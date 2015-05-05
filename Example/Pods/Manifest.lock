@@ -1,5 +1,7 @@
 PODS:
-  - ESTabBarController (0.1.0)
+  - ESTabBarController (0.1.0):
+    - UIColor-HexString (~> 1.1.0)
+  - UIColor-HexString (1.1.0)
 
 DEPENDENCIES:
   - ESTabBarController (from `..`)
@@ -9,6 +11,7 @@ EXTERNAL SOURCES:
     :path: ..
 
 SPEC CHECKSUMS:
-  ESTabBarController: 760e984297c109514026275d46367ce3bd0ef8ba
+  ESTabBarController: a4431257cba3e6171cbd77608be3517e95e79b2f
+  UIColor-HexString: f8a5612bd6772fed8db58ee594b42a0b2831750e
 
 COCOAPODS: 0.35.0
