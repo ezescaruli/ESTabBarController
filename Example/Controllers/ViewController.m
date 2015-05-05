@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ESTabBarController *tabBarController = [ESTabBarController instance];
+    ESTabBarController *tabBarController = [[ESTabBarController alloc] initWithControllersAmount:5];
     
     [self addChildViewController:tabBarController];
     

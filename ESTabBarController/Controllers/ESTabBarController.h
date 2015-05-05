@@ -11,6 +11,6 @@
 
 @interface ESTabBarController : UIViewController
 
-+ (instancetype)instance;
+- (instancetype)initWithControllersAmount:(NSInteger)controllersAmount;
 
 @end
