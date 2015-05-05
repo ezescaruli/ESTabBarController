@@ -43,6 +43,8 @@
     
     [tabBarController setViewController:[self viewControllerWithImageNamed:@"globe"]
                                 atIndex:4];
+    
+    [tabBarController highlightButtonAtIndex:2];
 }
 
 

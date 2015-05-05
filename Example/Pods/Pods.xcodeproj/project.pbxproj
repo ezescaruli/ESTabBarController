@@ -7,505 +7,325 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06B1FE079F808F3015AC828C /* ESTabBarController+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BE60498A2808384B799341 /* ESTabBarController+Autolayout.m */; };
-		332E67E7E42C9E63CCDAD11E /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CC20897AD3EB035D849C0 /* Pods-dummy.m */; };
-		39DE38D000D4E3125C7DB5BC /* ESTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B0C59C71E68BBA2A7E598CA /* ESTabBarController.h */; };
-		51130054047AE8FC78D9C6C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F029CBC1080D104D9AC74D /* Foundation.framework */; };
-		5C2C1CBAB4639718F31C844F /* ESTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D277652F6CFE8B8FF1C56B /* ESTabBarController.m */; };
-		7DB42103777073B18A7CBD6D /* UIButton+ESTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 01710759E9D0326ABCF8FA71 /* UIButton+ESTabBar.h */; };
-		8CA167B8F10D4B4E8C246D7F /* Pods-ESTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8463E871A7FC83B6D1B069A /* Pods-ESTabBarController-dummy.m */; };
-		9716425DD0671CFD96630E10 /* UIColor+HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 30506D63340E63620830D5C7 /* UIColor+HexString.h */; };
-		9793B05876536072852D5585 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F029CBC1080D104D9AC74D /* Foundation.framework */; };
-		B710528679E5822A007F8FDF /* UIButton+ESTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F5A378CB070F179680402 /* UIButton+ESTabBar.m */; };
-		B7CC1D0CE86853C84E522265 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F029CBC1080D104D9AC74D /* Foundation.framework */; };
-		C214524DCC3DBCC4CBB2405D /* ESTabBarController+Autolayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6A868281D54F84BBD262B1 /* ESTabBarController+Autolayout.h */; };
-		DA571D7F175D70C7E044682C /* Pods-UIColor-HexString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E255A481ADA2E7C85FEC37 /* Pods-UIColor-HexString-dummy.m */; };
-		F655703C51C8AC81970571D2 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3220B2714A930742927838C6 /* UIColor+HexString.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		10C886BABEB2F62288831A62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591C2B3CDA5F40E1F28F8910 /* Foundation.framework */; };
+		2EC9931EFED236D56E4F4975 /* ESTabBarController+Autolayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CEBB56034D9C46AEB24D2192 /* ESTabBarController+Autolayout.h */; };
+		455CE9D74EE33387E489E2A8 /* ESTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = EBDA72A10BBCF05DC21A5474 /* ESTabBarController.h */; };
+		600BBCE537805C3B3DEDDCE6 /* Pods-ESTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141BD261E8A7F7614D697CD /* Pods-ESTabBarController-dummy.m */; };
+		64A0B77FDD3F5193D2AE17A3 /* ESTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77453563E1338B28B08C4073 /* ESTabBarController.m */; };
+		765CC08692951C9C446A4214 /* UIButton+ESTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 506C7EA5F3F4033DAFE63503 /* UIButton+ESTabBar.h */; };
+		BA2E166231DB6BDFB2AE8D86 /* UIButton+ESTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EE5E14009AAC1A47132447 /* UIButton+ESTabBar.m */; };
+		C892B278A7B3F64D05F3A988 /* ESTabBarController+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 134AC5F3193A5A3E10A99726 /* ESTabBarController+Autolayout.m */; };
+		CD21ADCEDB8C564B3D29DBAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591C2B3CDA5F40E1F28F8910 /* Foundation.framework */; };
+		F25AEFE6A7E3F82E694C92D4 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB01A0F2A50C0C54FDF410 /* Pods-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9682B6363ADE3C0F418BF60D /* PBXContainerItemProxy */ = {
+		D73D1FDDE61C710CAF72338E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0FDAEEFDDBAE8B81F6AC8A1C /* Project object */;
+			containerPortal = 59B7CE66C6EDEE8D03ACD57E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 98E19F44CE9B2E18C2C2ED54;
-			remoteInfo = "Pods-UIColor-HexString";
-		};
-		AB71793090DE45BB8B1FD830 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0FDAEEFDDBAE8B81F6AC8A1C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 54ED5126E0682C2F3A5FD0CC;
+			remoteGlobalIDString = BD9AEDA2BADC037FA5EB04D9;
 			remoteInfo = "Pods-ESTabBarController";
-		};
-		FA730A7EB11B882939736980 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0FDAEEFDDBAE8B81F6AC8A1C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98E19F44CE9B2E18C2C2ED54;
-			remoteInfo = "Pods-UIColor-HexString";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01710759E9D0326ABCF8FA71 /* UIButton+ESTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+ESTabBar.h"; sourceTree = "<group>"; };
-		02A9567F58C713CD577E71A5 /* ESTabBarController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ESTabBarController.xib; sourceTree = "<group>"; };
-		036CB7580EDC936DDD026C00 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		06F029CBC1080D104D9AC74D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		094F5A378CB070F179680402 /* UIButton+ESTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ESTabBar.m"; sourceTree = "<group>"; };
-		0EEA1618515D18D980FBB66E /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		29BE60498A2808384B799341 /* ESTabBarController+Autolayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ESTabBarController+Autolayout.m"; sourceTree = "<group>"; };
-		30506D63340E63620830D5C7 /* UIColor+HexString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
-		3220B2714A930742927838C6 /* UIColor+HexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
-		37D277652F6CFE8B8FF1C56B /* ESTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ESTabBarController.m; sourceTree = "<group>"; };
-		3877C7322D7E947196815D7A /* Pods-ESTabBarController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ESTabBarController-Private.xcconfig"; sourceTree = "<group>"; };
-		3F85DB6E131D8488B4A2391C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		4B30B145938AD73C9C71C8A5 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		55AC812B95E733BDE61164B3 /* Pods-UIColor-HexString-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIColor-HexString-Private.xcconfig"; sourceTree = "<group>"; };
-		696537BBDE44F0CA43290C84 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		78E1A1DFA3C26FC6063F98BB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		79940C1DB0A161F6DB67BB6A /* Pods-ESTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ESTabBarController.xcconfig"; sourceTree = "<group>"; };
-		7C7CC20897AD3EB035D849C0 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		7C8262E3D04CFCE49BD22712 /* Pods-UIColor-HexString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIColor-HexString-prefix.pch"; sourceTree = "<group>"; };
-		7D342090B6DCCEFA13F4C600 /* Pods-UIColor-HexString.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIColor-HexString.xcconfig"; sourceTree = "<group>"; };
-		902B7D9D4AC2402CDB207291 /* Pods-ESTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ESTabBarController-prefix.pch"; sourceTree = "<group>"; };
-		9B0C59C71E68BBA2A7E598CA /* ESTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ESTabBarController.h; sourceTree = "<group>"; };
-		CE6A868281D54F84BBD262B1 /* ESTabBarController+Autolayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController+Autolayout.h"; sourceTree = "<group>"; };
-		D6498F10FE0946944230E315 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		D8E255A481ADA2E7C85FEC37 /* Pods-UIColor-HexString-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIColor-HexString-dummy.m"; sourceTree = "<group>"; };
-		E020B25C8B76C52225F16429 /* libPods-UIColor-HexString.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIColor-HexString.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8463E871A7FC83B6D1B069A /* Pods-ESTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ESTabBarController-dummy.m"; sourceTree = "<group>"; };
-		E979B0CF392E673E5E9406E7 /* libPods-ESTabBarController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ESTabBarController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE947153E1713E4CF06A94BC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		03F393951446B606002B5F01 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		134AC5F3193A5A3E10A99726 /* ESTabBarController+Autolayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ESTabBarController+Autolayout.m"; sourceTree = "<group>"; };
+		4279735CE6093BE758291CE5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB594269B6E1197ED433B45 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		506C7EA5F3F4033DAFE63503 /* UIButton+ESTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+ESTabBar.h"; sourceTree = "<group>"; };
+		544A920565E14C1269C512FA /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		591C2B3CDA5F40E1F28F8910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6BDFFCDBC2A62DBC9F6F4488 /* Pods-ESTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ESTabBarController.xcconfig"; sourceTree = "<group>"; };
+		7141BD261E8A7F7614D697CD /* Pods-ESTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ESTabBarController-dummy.m"; sourceTree = "<group>"; };
+		77453563E1338B28B08C4073 /* ESTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ESTabBarController.m; sourceTree = "<group>"; };
+		782D79D44B845EA9DA84C860 /* Pods-ESTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ESTabBarController-prefix.pch"; sourceTree = "<group>"; };
+		863BAFFAB7BFEA994764B87E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A8EE5E14009AAC1A47132447 /* UIButton+ESTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ESTabBar.m"; sourceTree = "<group>"; };
+		BAEAD7A133114F38F3E27BD3 /* Pods-ESTabBarController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ESTabBarController-Private.xcconfig"; sourceTree = "<group>"; };
+		C0F423D03AF9AC85A5C84A99 /* ESTabBarController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ESTabBarController.xib; sourceTree = "<group>"; };
+		C17C85D0F48766C0AC2869BA /* libPods-ESTabBarController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ESTabBarController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEBB56034D9C46AEB24D2192 /* ESTabBarController+Autolayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController+Autolayout.h"; sourceTree = "<group>"; };
+		D7E1A5043B35E4B6B5E1A11F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		D7FB01A0F2A50C0C54FDF410 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		E9C2A42EDBD7765272ABEDCE /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		EBDA72A10BBCF05DC21A5474 /* ESTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ESTabBarController.h; sourceTree = "<group>"; };
+		F959CFFA10D7D5CC588F491E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		211187078E61C995AE8FD534 /* Frameworks */ = {
+		B7264834851D64CCCCE4B32F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51130054047AE8FC78D9C6C6 /* Foundation.framework in Frameworks */,
+				CD21ADCEDB8C564B3D29DBAE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E0923D256C8ABF7E097DB73 /* Frameworks */ = {
+		F020797AEEA8676FD26F404A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7CC1D0CE86853C84E522265 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D38CA78FFFA1976392DC493A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9793B05876536072852D5585 /* Foundation.framework in Frameworks */,
+				10C886BABEB2F62288831A62 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1BE1D5DA2278D87855152742 /* Resources */ = {
+		0749D245635FE744F6745BA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F271A56D32D2C929D88360F3 /* Source */,
+				C1BEEB16F323AA51E38D9FDA /* Source */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		1E3E39211E537AE4D2036564 /* Pods */ = {
+		099DD73A9BF702D996B5E6A5 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				696537BBDE44F0CA43290C84 /* Pods-acknowledgements.markdown */,
-				D6498F10FE0946944230E315 /* Pods-acknowledgements.plist */,
-				7C7CC20897AD3EB035D849C0 /* Pods-dummy.m */,
-				0EEA1618515D18D980FBB66E /* Pods-environment.h */,
-				036CB7580EDC936DDD026C00 /* Pods-resources.sh */,
-				78E1A1DFA3C26FC6063F98BB /* Pods.debug.xcconfig */,
-				3F85DB6E131D8488B4A2391C /* Pods.release.xcconfig */,
+				615540621561E688CF65DFD5 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4BB17B57B87A4032F72D2465 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB56034D9C46AEB24D2192 /* ESTabBarController+Autolayout.h */,
+				134AC5F3193A5A3E10A99726 /* ESTabBarController+Autolayout.m */,
+				506C7EA5F3F4033DAFE63503 /* UIButton+ESTabBar.h */,
+				A8EE5E14009AAC1A47132447 /* UIButton+ESTabBar.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		615540621561E688CF65DFD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				863BAFFAB7BFEA994764B87E /* Pods-acknowledgements.markdown */,
+				544A920565E14C1269C512FA /* Pods-acknowledgements.plist */,
+				D7FB01A0F2A50C0C54FDF410 /* Pods-dummy.m */,
+				E9C2A42EDBD7765272ABEDCE /* Pods-environment.h */,
+				4BB594269B6E1197ED433B45 /* Pods-resources.sh */,
+				D7E1A5043B35E4B6B5E1A11F /* Pods.debug.xcconfig */,
+				F959CFFA10D7D5CC588F491E /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		24EA8731F70FE1A79BA32180 /* Source */ = {
+		61F159074AD610FBB36C02FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA6E197430D0BD370A747B3C /* Categories */,
-				CB0AC71F96E3A4514AAE2B1C /* Controllers */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		2CD32A2BAF817F0268997DEA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EE947153E1713E4CF06A94BC /* libPods.a */,
-				E979B0CF392E673E5E9406E7 /* libPods-ESTabBarController.a */,
-				E020B25C8B76C52225F16429 /* libPods-UIColor-HexString.a */,
+				4279735CE6093BE758291CE5 /* libPods.a */,
+				C17C85D0F48766C0AC2869BA /* libPods-ESTabBarController.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		352D92361747830EA4A0A379 /* Development Pods */ = {
+		6AE2F9B1F3DEE914A6424C70 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C3C9597B7AEFE4BDCAA8DCC7 /* ESTabBarController */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		4D323E6B3D112D3DDE66DA00 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				712BC5155071E32A5F9D72D7 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		68F04229FAA02C170546D9BF /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				02A9567F58C713CD577E71A5 /* ESTabBarController.xib */,
+				EBDA72A10BBCF05DC21A5474 /* ESTabBarController.h */,
+				77453563E1338B28B08C4073 /* ESTabBarController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		712BC5155071E32A5F9D72D7 /* iOS */ = {
+		9077B9BEAE084277CE1F366A /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				06F029CBC1080D104D9AC74D /* Foundation.framework */,
+				FFA25613F6659E7FFCFE4AFE /* ESTabBarController */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		A2AF900C02E72BFED8888CA8 = {
+			isa = PBXGroup;
+			children = (
+				03F393951446B606002B5F01 /* Podfile */,
+				9077B9BEAE084277CE1F366A /* Development Pods */,
+				BCFF04A75DB4E1F02CD4BEEA /* Frameworks */,
+				61F159074AD610FBB36C02FF /* Products */,
+				099DD73A9BF702D996B5E6A5 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BCFF04A75DB4E1F02CD4BEEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3AA32FA1E1E87AD0C405687 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1BEEB16F323AA51E38D9FDA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E052D231BEC2E4F1C8D8F41B /* Controllers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C3AA32FA1E1E87AD0C405687 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				591C2B3CDA5F40E1F28F8910 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7659A134EAB87CB11935EC2F /* UIColor-HexString */ = {
+		D4E6F1A4C2D3105DFE3016F3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				30506D63340E63620830D5C7 /* UIColor+HexString.h */,
-				3220B2714A930742927838C6 /* UIColor+HexString.m */,
-				C31F7AD5FBC2FD522C4E1643 /* Support Files */,
-			);
-			path = "UIColor-HexString";
-			sourceTree = "<group>";
-		};
-		954CFF20901614CA13E97E0B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				79940C1DB0A161F6DB67BB6A /* Pods-ESTabBarController.xcconfig */,
-				3877C7322D7E947196815D7A /* Pods-ESTabBarController-Private.xcconfig */,
-				E8463E871A7FC83B6D1B069A /* Pods-ESTabBarController-dummy.m */,
-				902B7D9D4AC2402CDB207291 /* Pods-ESTabBarController-prefix.pch */,
+				6BDFFCDBC2A62DBC9F6F4488 /* Pods-ESTabBarController.xcconfig */,
+				BAEAD7A133114F38F3E27BD3 /* Pods-ESTabBarController-Private.xcconfig */,
+				7141BD261E8A7F7614D697CD /* Pods-ESTabBarController-dummy.m */,
+				782D79D44B845EA9DA84C860 /* Pods-ESTabBarController-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Pods-ESTabBarController";
 			sourceTree = "<group>";
 		};
-		B6D429B228F43BA28DA03F36 /* Targets Support Files */ = {
+		E052D231BEC2E4F1C8D8F41B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1E3E39211E537AE4D2036564 /* Pods */,
+				C0F423D03AF9AC85A5C84A99 /* ESTabBarController.xib */,
 			);
-			name = "Targets Support Files";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		C31F7AD5FBC2FD522C4E1643 /* Support Files */ = {
+		E32759AC912893A2980C6330 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7D342090B6DCCEFA13F4C600 /* Pods-UIColor-HexString.xcconfig */,
-				55AC812B95E733BDE61164B3 /* Pods-UIColor-HexString-Private.xcconfig */,
-				D8E255A481ADA2E7C85FEC37 /* Pods-UIColor-HexString-dummy.m */,
-				7C8262E3D04CFCE49BD22712 /* Pods-UIColor-HexString-prefix.pch */,
+				4BB17B57B87A4032F72D2465 /* Categories */,
+				6AE2F9B1F3DEE914A6424C70 /* Controllers */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-UIColor-HexString";
+			path = Source;
 			sourceTree = "<group>";
 		};
-		C3C9597B7AEFE4BDCAA8DCC7 /* ESTabBarController */ = {
+		FFA25613F6659E7FFCFE4AFE /* ESTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				1BE1D5DA2278D87855152742 /* Resources */,
-				24EA8731F70FE1A79BA32180 /* Source */,
-				954CFF20901614CA13E97E0B /* Support Files */,
+				0749D245635FE744F6745BA8 /* Resources */,
+				E32759AC912893A2980C6330 /* Source */,
+				D4E6F1A4C2D3105DFE3016F3 /* Support Files */,
 			);
 			name = ESTabBarController;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		CA6E197430D0BD370A747B3C /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				CE6A868281D54F84BBD262B1 /* ESTabBarController+Autolayout.h */,
-				29BE60498A2808384B799341 /* ESTabBarController+Autolayout.m */,
-				01710759E9D0326ABCF8FA71 /* UIButton+ESTabBar.h */,
-				094F5A378CB070F179680402 /* UIButton+ESTabBar.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		CB0AC71F96E3A4514AAE2B1C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				9B0C59C71E68BBA2A7E598CA /* ESTabBarController.h */,
-				37D277652F6CFE8B8FF1C56B /* ESTabBarController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CEA7ED0C8AD2C2E24985B0F6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7659A134EAB87CB11935EC2F /* UIColor-HexString */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D20E8DBB953F4F085DFEFC63 = {
-			isa = PBXGroup;
-			children = (
-				4B30B145938AD73C9C71C8A5 /* Podfile */,
-				352D92361747830EA4A0A379 /* Development Pods */,
-				4D323E6B3D112D3DDE66DA00 /* Frameworks */,
-				CEA7ED0C8AD2C2E24985B0F6 /* Pods */,
-				2CD32A2BAF817F0268997DEA /* Products */,
-				B6D429B228F43BA28DA03F36 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		F271A56D32D2C929D88360F3 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				68F04229FAA02C170546D9BF /* Controllers */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1413E5896821993EEA787978 /* Headers */ = {
+		AA30BFC3CD8D51DAF14CFB45 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9716425DD0671CFD96630E10 /* UIColor+HexString.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		275F0288E7A310AAEDA3096F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C214524DCC3DBCC4CBB2405D /* ESTabBarController+Autolayout.h in Headers */,
-				39DE38D000D4E3125C7DB5BC /* ESTabBarController.h in Headers */,
-				7DB42103777073B18A7CBD6D /* UIButton+ESTabBar.h in Headers */,
+				2EC9931EFED236D56E4F4975 /* ESTabBarController+Autolayout.h in Headers */,
+				455CE9D74EE33387E489E2A8 /* ESTabBarController.h in Headers */,
+				765CC08692951C9C446A4214 /* UIButton+ESTabBar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		547952F56D7209B6864B0499 /* Pods */ = {
+		6D81F992FA913796E17B3524 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75CA68A43D0469C9CAF346F7 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = EE786E8A414B1AD48B25D3E3 /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				E539489E9819C20BF5B0F986 /* Sources */,
-				D38CA78FFFA1976392DC493A /* Frameworks */,
+				C5C5F7D0C5DF28A7F053541B /* Sources */,
+				B7264834851D64CCCCE4B32F /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A17186F548DD3AABF535D088 /* PBXTargetDependency */,
-				5CF3794F5C51BB40E934EFBD /* PBXTargetDependency */,
+				0A116B7F288C7894188AF387 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = EE947153E1713E4CF06A94BC /* libPods.a */;
+			productReference = 4279735CE6093BE758291CE5 /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		54ED5126E0682C2F3A5FD0CC /* Pods-ESTabBarController */ = {
+		BD9AEDA2BADC037FA5EB04D9 /* Pods-ESTabBarController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1400D123E5D9912D9A35AE58 /* Build configuration list for PBXNativeTarget "Pods-ESTabBarController" */;
+			buildConfigurationList = 00B8E20EAEA9FD72FAF41B15 /* Build configuration list for PBXNativeTarget "Pods-ESTabBarController" */;
 			buildPhases = (
-				BE02A83DA7544F84D187452F /* Sources */,
-				211187078E61C995AE8FD534 /* Frameworks */,
-				275F0288E7A310AAEDA3096F /* Headers */,
+				E85989FD029F72917FD7FF33 /* Sources */,
+				F020797AEEA8676FD26F404A /* Frameworks */,
+				AA30BFC3CD8D51DAF14CFB45 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F63E6C136DB4EFD13835137B /* PBXTargetDependency */,
 			);
 			name = "Pods-ESTabBarController";
 			productName = "Pods-ESTabBarController";
-			productReference = E979B0CF392E673E5E9406E7 /* libPods-ESTabBarController.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		98E19F44CE9B2E18C2C2ED54 /* Pods-UIColor-HexString */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C7E662C27CB4B0022608C192 /* Build configuration list for PBXNativeTarget "Pods-UIColor-HexString" */;
-			buildPhases = (
-				84C06C769CDBB920BC5A37EE /* Sources */,
-				4E0923D256C8ABF7E097DB73 /* Frameworks */,
-				1413E5896821993EEA787978 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-UIColor-HexString";
-			productName = "Pods-UIColor-HexString";
-			productReference = E020B25C8B76C52225F16429 /* libPods-UIColor-HexString.a */;
+			productReference = C17C85D0F48766C0AC2869BA /* libPods-ESTabBarController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0FDAEEFDDBAE8B81F6AC8A1C /* Project object */ = {
+		59B7CE66C6EDEE8D03ACD57E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = AAE9F7489251222373C593FB /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = EC4E7F8EE17B9F389311D2B6 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D20E8DBB953F4F085DFEFC63;
-			productRefGroup = 2CD32A2BAF817F0268997DEA /* Products */;
+			mainGroup = A2AF900C02E72BFED8888CA8;
+			productRefGroup = 61F159074AD610FBB36C02FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				547952F56D7209B6864B0499 /* Pods */,
-				54ED5126E0682C2F3A5FD0CC /* Pods-ESTabBarController */,
-				98E19F44CE9B2E18C2C2ED54 /* Pods-UIColor-HexString */,
+				6D81F992FA913796E17B3524 /* Pods */,
+				BD9AEDA2BADC037FA5EB04D9 /* Pods-ESTabBarController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		84C06C769CDBB920BC5A37EE /* Sources */ = {
+		C5C5F7D0C5DF28A7F053541B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA571D7F175D70C7E044682C /* Pods-UIColor-HexString-dummy.m in Sources */,
-				F655703C51C8AC81970571D2 /* UIColor+HexString.m in Sources */,
+				F25AEFE6A7E3F82E694C92D4 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE02A83DA7544F84D187452F /* Sources */ = {
+		E85989FD029F72917FD7FF33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06B1FE079F808F3015AC828C /* ESTabBarController+Autolayout.m in Sources */,
-				5C2C1CBAB4639718F31C844F /* ESTabBarController.m in Sources */,
-				8CA167B8F10D4B4E8C246D7F /* Pods-ESTabBarController-dummy.m in Sources */,
-				B710528679E5822A007F8FDF /* UIButton+ESTabBar.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E539489E9819C20BF5B0F986 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				332E67E7E42C9E63CCDAD11E /* Pods-dummy.m in Sources */,
+				C892B278A7B3F64D05F3A988 /* ESTabBarController+Autolayout.m in Sources */,
+				64A0B77FDD3F5193D2AE17A3 /* ESTabBarController.m in Sources */,
+				600BBCE537805C3B3DEDDCE6 /* Pods-ESTabBarController-dummy.m in Sources */,
+				BA2E166231DB6BDFB2AE8D86 /* UIButton+ESTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5CF3794F5C51BB40E934EFBD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-UIColor-HexString";
-			target = 98E19F44CE9B2E18C2C2ED54 /* Pods-UIColor-HexString */;
-			targetProxy = FA730A7EB11B882939736980 /* PBXContainerItemProxy */;
-		};
-		A17186F548DD3AABF535D088 /* PBXTargetDependency */ = {
+		0A116B7F288C7894188AF387 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ESTabBarController";
-			target = 54ED5126E0682C2F3A5FD0CC /* Pods-ESTabBarController */;
-			targetProxy = AB71793090DE45BB8B1FD830 /* PBXContainerItemProxy */;
-		};
-		F63E6C136DB4EFD13835137B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-UIColor-HexString";
-			target = 98E19F44CE9B2E18C2C2ED54 /* Pods-UIColor-HexString */;
-			targetProxy = 9682B6363ADE3C0F418BF60D /* PBXContainerItemProxy */;
+			target = BD9AEDA2BADC037FA5EB04D9 /* Pods-ESTabBarController */;
+			targetProxy = D73D1FDDE61C710CAF72338E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		13C050BF4F88C4B21E1FE2CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3877C7322D7E947196815D7A /* Pods-ESTabBarController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-ESTabBarController/Pods-ESTabBarController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		506F14391E9535A7DA0F761F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55AC812B95E733BDE61164B3 /* Pods-UIColor-HexString-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-UIColor-HexString/Pods-UIColor-HexString-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		5A4842BF665A157BD97C8EC3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7BBF54CD8652D0F2FBB112DB /* Debug */ = {
+		12F7051C30E071906D57BC4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -544,41 +364,43 @@
 			};
 			name = Debug;
 		};
-		C56EE970BF2EF2D471E1E661 /* Release */ = {
+		17353569606CE1604CC8CB25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F85DB6E131D8488B4A2391C /* Pods.release.xcconfig */;
 			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		DC0C44808F0389E3D3C92BCC /* Debug */ = {
+		4B7E184A66DDF20FA5D2B9CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55AC812B95E733BDE61164B3 /* Pods-UIColor-HexString-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-UIColor-HexString/Pods-UIColor-HexString-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DDF015E3D2776A6AB89FFDA5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3877C7322D7E947196815D7A /* Pods-ESTabBarController-Private.xcconfig */;
+			baseConfigurationReference = BAEAD7A133114F38F3E27BD3 /* Pods-ESTabBarController-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-ESTabBarController/Pods-ESTabBarController-prefix.pch";
@@ -592,9 +414,9 @@
 			};
 			name = Debug;
 		};
-		E848C4BDC39C2FF32CA3555C /* Debug */ = {
+		B63DEF15957B46E390B0568F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78E1A1DFA3C26FC6063F98BB /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D7E1A5043B35E4B6B5E1A11F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -608,46 +430,69 @@
 			};
 			name = Debug;
 		};
+		E9BB7E4AC4BE07C91BA004F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAEAD7A133114F38F3E27BD3 /* Pods-ESTabBarController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-ESTabBarController/Pods-ESTabBarController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EC9D4358B2FF6B01A9438078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F959CFFA10D7D5CC588F491E /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1400D123E5D9912D9A35AE58 /* Build configuration list for PBXNativeTarget "Pods-ESTabBarController" */ = {
+		00B8E20EAEA9FD72FAF41B15 /* Build configuration list for PBXNativeTarget "Pods-ESTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DDF015E3D2776A6AB89FFDA5 /* Debug */,
-				13C050BF4F88C4B21E1FE2CC /* Release */,
+				4B7E184A66DDF20FA5D2B9CA /* Debug */,
+				E9BB7E4AC4BE07C91BA004F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75CA68A43D0469C9CAF346F7 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		EC4E7F8EE17B9F389311D2B6 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E848C4BDC39C2FF32CA3555C /* Debug */,
-				C56EE970BF2EF2D471E1E661 /* Release */,
+				12F7051C30E071906D57BC4D /* Debug */,
+				17353569606CE1604CC8CB25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAE9F7489251222373C593FB /* Build configuration list for PBXProject "Pods" */ = {
+		EE786E8A414B1AD48B25D3E3 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7BBF54CD8652D0F2FBB112DB /* Debug */,
-				5A4842BF665A157BD97C8EC3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C7E662C27CB4B0022608C192 /* Build configuration list for PBXNativeTarget "Pods-UIColor-HexString" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC0C44808F0389E3D3C92BCC /* Debug */,
-				506F14391E9535A7DA0F761F /* Release */,
+				B63DEF15957B46E390B0568F /* Debug */,
+				EC9D4358B2FF6B01A9438078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0FDAEEFDDBAE8B81F6AC8A1C /* Project object */;
+	rootObject = 59B7CE66C6EDEE8D03ACD57E /* Project object */;
 }

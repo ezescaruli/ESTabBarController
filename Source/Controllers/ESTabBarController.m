@@ -22,6 +22,7 @@
 @property (nonatomic, assign) BOOL didSetupInterface;
 
 @property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, strong) NSMutableSet *highlightedButtonIndexes;
 
 @end
 
@@ -58,22 +59,20 @@
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index {
     self.controllers[@(index)] = viewController;
-    
-    if (self.didSetupInterface) {
-        // If the UI was already setup, it's necessary to update it.
-        [self setupInterface];
-    }
+    [self setupInterfaceIfNeeded];
 }
 
 
 - (void)setAction:(ESTabBarAction)action
           atIndex:(NSInteger)index {
     self.actions[@(index)] = action;
-    
-    if (self.didSetupInterface) {
-        // If the UI was already setup, it's necessary to update it.
-        [self setupInterface];
-    }
+    [self setupInterfaceIfNeeded];
+}
+
+
+- (void)highlightButtonAtIndex:(NSInteger)index {
+    [self.highlightedButtonIndexes addObject:@(index)];
+    [self setupInterfaceIfNeeded];
 }
 
 
@@ -96,12 +95,21 @@
     
     self.controllers = [NSMutableDictionary dictionaryWithCapacity:controllersAmount];
     self.actions = [NSMutableDictionary dictionaryWithCapacity:controllersAmount];
+    
+    self.highlightedButtonIndexes = [NSMutableSet set];
+}
+
+
+- (void)setupInterfaceIfNeeded {
+    if (self.didSetupInterface) {
+        // If the UI was already setup, it's necessary to update it.
+        [self setupInterface];
+    }
 }
 
 
 - (void)setupInterface {
     [self setupButtons];
-    
     self.didSetupInterface = YES;
 }
 
@@ -130,9 +138,10 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
     UIImage *buttonImage = [self.controllers[@(index)] tabBarItem].image;
+    BOOL isHighlighted = [self.highlightedButtonIndexes containsObject:@(index)];
     [button customizeForTabBarWithImage:buttonImage
                           selectedColor:self.selectedColor ?: [UIColor blackColor]
-                            highlighted:NO];
+                            highlighted:isHighlighted];
     
     [button addTarget:self
                action:@selector(tabButtonAction:)

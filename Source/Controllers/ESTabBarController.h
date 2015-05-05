@@ -43,4 +43,10 @@ typedef void (^ESTabBarAction)(void);
           atIndex:(NSInteger)index;
 
 
+/**
+ Makes a button at a specific index look highlighted.
+ */
+- (void)highlightButtonAtIndex:(NSInteger)index;
+
+
 @end
