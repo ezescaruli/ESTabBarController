@@ -1,0 +1,2 @@
+language: objective-c
+script: 'xctool -workspace Example/Example.xcworkspace -scheme Example -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO'
