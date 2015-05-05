@@ -14,6 +14,10 @@
 @property (nonatomic, strong) NSMutableArray *controllers;
 @property (nonatomic, strong) NSMutableArray *actions;
 
+@property (nonatomic, assign) BOOL didSetupInterface;
+
+@property (nonatomic, strong) NSMutableArray *buttons;
+
 @end
 
 
@@ -37,8 +41,9 @@
 #pragma mark - UIViewController
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupInterface];
 }
 
 
@@ -48,12 +53,22 @@
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index {
     self.controllers[index] = viewController;
+    
+    if (self.didSetupInterface) {
+        // If the UI was already setup, it's necessary to update it.
+        [self setupInterface];
+    }
 }
 
 
 - (void)setAction:(ESTabBarAction)action
           atIndex:(NSInteger)index {
     self.actions[index] = action;
+    
+    if (self.didSetupInterface) {
+        // If the UI was already setup, it's necessary to update it.
+        [self setupInterface];
+    }
 }
 
 
@@ -66,6 +81,23 @@
     
     self.controllers = [NSMutableArray arrayWithCapacity:controllersAmount];
     self.actions = [NSMutableArray arrayWithCapacity:controllersAmount];
+}
+
+
+- (void)setupInterface {
+    [self setupButtons];
+    
+    self.didSetupInterface = YES;
+}
+
+
+- (void)setupButtons {
+    // First, I remove the previous buttons. They could have an outdated image.
+    for (UIButton *button in self.buttons) {
+        [button removeFromSuperview];
+    }
+    
+    self.buttons = [NSMutableArray array];
 }
 
 
