@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ..
 
 SPEC CHECKSUMS:
-  ESTabBarController: a4431257cba3e6171cbd77608be3517e95e79b2f
+  ESTabBarController: 9804853881b8c16ce123d009e763970a8bed6f3f
   UIColor-HexString: f8a5612bd6772fed8db58ee594b42a0b2831750e
 
 COCOAPODS: 0.35.0
