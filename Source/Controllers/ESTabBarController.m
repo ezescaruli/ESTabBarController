@@ -13,14 +13,13 @@
 
 @interface ESTabBarController ()
 
+@property (nonatomic, weak) IBOutlet UIView *controllersContainer;
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
 
 @property (nonatomic, assign) NSInteger controllersAmount;
 @property (nonatomic, strong) NSMutableDictionary *controllers;
 @property (nonatomic, strong) NSMutableDictionary *actions;
-
 @property (nonatomic, assign) BOOL didSetupInterface;
-
 @property (nonatomic, strong) NSMutableArray *buttons;
 @property (nonatomic, strong) NSMutableSet *highlightedButtonIndexes;
 
@@ -50,6 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupInterface];
+    [self moveToControllerAtIndex:0];
 }
 
 
@@ -80,7 +80,11 @@
 
 
 - (void)tabButtonAction:(UIButton *)button {
+    NSInteger index = [self.buttons indexOfObject:button];
     
+    if (index != NSNotFound) {
+        [self moveToControllerAtIndex:index];
+    }
 }
 
 
@@ -148,6 +152,31 @@
      forControlEvents:UIControlEventTouchUpInside];
     
     return button;
+}
+
+
+- (void)moveToControllerAtIndex:(NSInteger)index {
+    UIViewController *controller = self.controllers[@(index)];
+    
+    if (controller != nil) {
+        if (self.selectedIndex > 0) {
+            // Remove the current controller's view.
+            UIViewController *currentController = self.controllers[@(self.selectedIndex)];
+            [currentController.view removeFromSuperview];
+        }
+        
+        if (![self.childViewControllers containsObject:controller]) {
+            // If I haven't added the controller to the childs yet...
+            [self addChildViewController:controller];
+            [controller didMoveToParentViewController:self];
+        }
+        
+        controller.view.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.view addSubview:controller.view];
+        controller.view.frame = self.controllersContainer.bounds;
+        
+        _selectedIndex = index;
+    }
 }
 
 
