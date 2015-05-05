@@ -8,6 +8,9 @@
 
 #import "ESTabBarController.h"
 
+
 @interface ESTabBarController (Autolayout)
+
+- (void)setupButtonsConstraints;
 
 @end

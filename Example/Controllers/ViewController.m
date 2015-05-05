@@ -14,6 +14,9 @@
 @implementation ViewController
 
 
+#pragma mark - UIViewController
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -25,6 +28,11 @@
     tabBarController.view.frame = self.view.bounds;
     
     [tabBarController didMoveToParentViewController:self];
+    
+    UIViewController *archiveViewController = [[UIViewController alloc] init];
+    archiveViewController.tabBarItem.image = [UIImage imageNamed:@"archive"];
+    
+    [tabBarController setViewController:archiveViewController atIndex:0];
 }
 
 

@@ -8,14 +8,16 @@
 
 #import "ESTabBarController.h"
 #import "UIButton+ESTabBar.h"
+#import "ESTabBarController+Autolayout.h"
 
 
 @interface ESTabBarController ()
 
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
 
-@property (nonatomic, strong) NSMutableArray *controllers;
-@property (nonatomic, strong) NSMutableArray *actions;
+@property (nonatomic, assign) NSInteger controllersAmount;
+@property (nonatomic, strong) NSMutableDictionary *controllers;
+@property (nonatomic, strong) NSMutableDictionary *actions;
 
 @property (nonatomic, assign) BOOL didSetupInterface;
 
@@ -55,7 +57,7 @@
 
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index {
-    self.controllers[index] = viewController;
+    self.controllers[@(index)] = viewController;
     
     if (self.didSetupInterface) {
         // If the UI was already setup, it's necessary to update it.
@@ -66,7 +68,7 @@
 
 - (void)setAction:(ESTabBarAction)action
           atIndex:(NSInteger)index {
-    self.actions[index] = action;
+    self.actions[@(index)] = action;
     
     if (self.didSetupInterface) {
         // If the UI was already setup, it's necessary to update it.
@@ -90,8 +92,10 @@
     NSAssert(controllersAmount > 0,
              @"The controllers amount should be greater than zero.");
     
-    self.controllers = [NSMutableArray arrayWithCapacity:controllersAmount];
-    self.actions = [NSMutableArray arrayWithCapacity:controllersAmount];
+    self.controllersAmount = controllersAmount;
+    
+    self.controllers = [NSMutableDictionary dictionaryWithCapacity:controllersAmount];
+    self.actions = [NSMutableDictionary dictionaryWithCapacity:controllersAmount];
 }
 
 
@@ -108,15 +112,16 @@
         [button removeFromSuperview];
     }
     
-    self.buttons = [NSMutableArray array];
+    self.buttons = [NSMutableArray arrayWithCapacity:self.controllersAmount];
     
-    for (NSInteger i = 0; i < self.controllers.count; i++) {
+    for (NSInteger i = 0; i < self.controllersAmount; i++) {
         UIButton *button = [self createButtonForIndex:i];
         
         [self.buttonsContainer addSubview:button];
         self.buttons[i] = button;
     }
     
+    [self setupButtonsConstraints];
     self.buttonsContainer.backgroundColor = self.buttonsBackgroundColor ?: [UIColor lightGrayColor];
 }
 
@@ -124,7 +129,7 @@
 - (UIButton *)createButtonForIndex:(NSInteger)index {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    UIImage *buttonImage = [self.controllers[index] tabBarItem].image;
+    UIImage *buttonImage = [self.controllers[@(index)] tabBarItem].image;
     [button customizeForTabBarWithImage:buttonImage
                           selectedColor:self.selectedColor ?: [UIColor blackColor]
                             highlighted:NO];
