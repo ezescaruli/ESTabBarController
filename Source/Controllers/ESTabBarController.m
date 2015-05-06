@@ -119,6 +119,9 @@
     self.actions = [NSMutableDictionary dictionaryWithCapacity:tabIcons.count];
     
     self.highlightedButtonIndexes = [NSMutableSet set];
+    
+    // No selected index at first.
+    _selectedIndex = -1;
 }
 
 
@@ -174,6 +177,11 @@
 
 
 - (void)moveToControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
+    if (self.selectedIndex == index) {
+        // Nothing to do.
+        return;
+    }
+    
     // Deselect all the buttons excepting the selected one.
     for (NSInteger i = 0; i < self.buttons.count; i++) {
         UIButton *button = self.buttons[i];
