@@ -23,12 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    // Instance creation.
+    ESTabBarController *tabBarController = [[ESTabBarController alloc] initWithTabIconNames:@[@"archive",
+                                                                                              @"clock",
+                                                                                              @"target",
+                                                                                              @"map",
+                                                                                              @"globe"]];
     
-    ESTabBarController *tabBarController = [[ESTabBarController alloc] initWithTabIcons:@[[UIImage imageNamed:@"archive"],
-                                                                                          [UIImage imageNamed:@"clock"],
-                                                                                          [UIImage imageNamed:@"target"],
-                                                                                          [UIImage imageNamed:@"map"],
-                                                                                          [UIImage imageNamed:@"globe"]]];
+    // Add child view controller.
     
     [self addChildViewController:tabBarController];
     
@@ -36,6 +39,8 @@
     tabBarController.view.frame = self.view.bounds;
     
     [tabBarController didMoveToParentViewController:self];
+    
+    // View controllers.
     
     [tabBarController setViewController:[[ArchiveViewController alloc] init]
                                 atIndex:0];
@@ -49,7 +54,11 @@
     [tabBarController setViewController:[[GlobeViewController alloc] init]
                                 atIndex:4];
     
+    // Highlighted buttons.
+    
     [tabBarController highlightButtonAtIndex:2];
+    
+    // Actions.
     
     __weak typeof (self) weakSelf = self;
     

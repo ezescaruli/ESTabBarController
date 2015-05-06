@@ -45,6 +45,17 @@
 }
 
 
+- (instancetype)initWithTabIconNames:(NSArray *)tabIconNames {
+    NSMutableArray *icons = [NSMutableArray array];
+    
+    for (NSString *name in tabIconNames) {
+        [icons addObject:[UIImage imageNamed:name]];
+    }
+    
+    return [self initWithTabIcons:icons];
+}
+
+
 #pragma mark - UIViewController
 
 

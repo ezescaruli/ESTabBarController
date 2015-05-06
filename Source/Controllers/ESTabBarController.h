@@ -25,9 +25,16 @@ typedef void (^ESTabBarAction)(void);
 
 
 /**
- Initializes the tab bar with the icons to be shown in each tab button.
+ Initializes the tab bar with an array of UIImage that will be the icons
+ to show in the tab bar.
  */
 - (instancetype)initWithTabIcons:(NSArray *)tabIcons;
+
+
+/**
+ Convenience initializer that receives an array of NSString images names.
+ */
+- (instancetype)initWithTabIconNames:(NSArray *)tabIconNames;
 
 
 /**
