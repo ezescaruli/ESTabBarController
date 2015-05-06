@@ -12,5 +12,6 @@
 @interface ESTabBarController (Autolayout)
 
 - (void)setupButtonsConstraints;
+- (void)setupSelectionIndicatorConstraints;
 
 @end

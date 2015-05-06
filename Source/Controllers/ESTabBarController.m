@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSMutableArray *buttons;
 @property (nonatomic, strong) NSMutableSet *highlightedButtonIndexes;
 @property (nonatomic, strong) NSArray *tabIcons;
+@property (nonatomic, strong) UIView *selectionIndicator;
+@property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
 
 @end
 
@@ -50,7 +52,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupInterface];
-    [self moveToControllerAtIndex:0];
+    [self moveToControllerAtIndex:0 animated:NO];
 }
 
 
@@ -93,7 +95,7 @@
     NSInteger index = [self.buttons indexOfObject:button];
     
     if (index != NSNotFound) {
-        [self moveToControllerAtIndex:index];
+        [self moveToControllerAtIndex:index animated:YES];
     }
 }
 
@@ -124,6 +126,7 @@
 
 - (void)setupInterface {
     [self setupButtons];
+    [self setupSelectionIndicator];
     self.didSetupInterface = YES;
 }
 
@@ -164,7 +167,7 @@
 }
 
 
-- (void)moveToControllerAtIndex:(NSInteger)index {
+- (void)moveToControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
     UIViewController *controller = self.controllers[@(index)];
     
     if (controller != nil) {
@@ -183,7 +186,45 @@
         [self.view addSubview:controller.view];
         controller.view.frame = self.controllersContainer.bounds;
         
+        [self moveSelectionIndicatorToIndex:index animated:animated];
+        
         _selectedIndex = index;
+    }
+}
+
+
+- (void)setupSelectionIndicator {
+    if (self.selectionIndicator != nil) {
+        // We already set up the selection indicator.
+        return;
+    }
+    
+    self.selectionIndicator = [[UIView alloc] init];
+    self.selectionIndicator.translatesAutoresizingMaskIntoConstraints = NO;
+    self.selectionIndicator.backgroundColor = self.selectedColor ?: [UIColor blackColor];
+    [self.buttonsContainer addSubview:self.selectionIndicator];
+    
+    [self setupSelectionIndicatorConstraints];
+}
+
+
+- (void)moveSelectionIndicatorToIndex:(NSInteger)index animated:(BOOL)animated {
+    CGFloat constant = [self.buttons[index] frame].origin.x;
+    
+    [self.buttonsContainer layoutIfNeeded];
+    void (^animations)(void) = ^{
+        self.selectionIndicatorLeadingConstraint.constant = constant;
+        [self.buttonsContainer layoutIfNeeded];
+    };
+    
+    if (animated) {
+        [UIView animateWithDuration:0.25
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:animations
+                         completion:nil];
+    } else {
+        animations();
     }
 }
 

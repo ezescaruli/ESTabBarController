@@ -14,11 +14,17 @@
 @property (nonatomic, weak) UIView *buttonsContainer;
 @property (nonatomic, strong) NSMutableArray *buttons;
 @property (nonatomic, assign) NSInteger controllersAmount;
+@property (nonatomic, strong) UIView *selectionIndicator;
+@property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
+
 
 @end
 
 
 @implementation ESTabBarController (Autolayout)
+
+
+#pragma mark - Public methods
 
 
 - (void)setupButtonsConstraints {
@@ -30,6 +36,19 @@
         [self.view addConstraint:[self widthLayoutConstraintForButtonAtIndex:i]];
     }
 }
+
+
+- (void)setupSelectionIndicatorConstraints {
+    self.selectionIndicatorLeadingConstraint = [self leadingLayoutConstraintForIndicator];
+    
+    [self.buttonsContainer addConstraint:self.selectionIndicatorLeadingConstraint];
+    [self.buttonsContainer addConstraints:[self widthLayoutConstraintsForIndicator]];
+    [self.buttonsContainer addConstraints:[self heightLayoutConstraintsForIndicator]];
+    [self.buttonsContainer addConstraints:[self bottomLayoutConstraintsForIndicator]];
+}
+
+
+#pragma mark - Private methods
 
 
 - (NSArray *)leftLayoutConstraintsForButtonAtIndex:(NSInteger)index {
@@ -78,6 +97,43 @@
                                         attribute:NSLayoutAttributeWidth
                                        multiplier:1.0 / self.buttons.count
                                          constant:0.0];
+}
+
+
+- (NSLayoutConstraint *)leadingLayoutConstraintForIndicator {
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-(0)-[selectionIndicator]"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:@{@"selectionIndicator": self.selectionIndicator}];
+    
+    return [constraints firstObject];
+}
+
+
+- (NSArray *)widthLayoutConstraintsForIndicator {
+    NSDictionary *views = @{@"button": self.buttons[0],
+                            @"selectionIndicator": self.selectionIndicator};
+    
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"[selectionIndicator(==button)]"
+                                                   options:0
+                                                   metrics:nil
+                                                     views:views];
+}
+
+
+- (NSArray *)heightLayoutConstraintsForIndicator {
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator(==3)]"
+                                                   options:0
+                                                   metrics:nil
+                                                     views:@{@"selectionIndicator": self.selectionIndicator}];
+}
+
+
+- (NSArray *)bottomLayoutConstraintsForIndicator {
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator]-(0)-|"
+                                                   options:0
+                                                   metrics:nil
+                                                     views:@{@"selectionIndicator": self.selectionIndicator}];
 }
 
 

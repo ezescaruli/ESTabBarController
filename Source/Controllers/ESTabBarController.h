@@ -20,6 +20,7 @@ typedef void (^ESTabBarAction)(void);
 /// Background color for the view that contains the buttons.
 @property (nonatomic, strong) UIColor *buttonsBackgroundColor;
 
+/// The index (starting from 0) of the view controller being shown.
 @property (nonatomic, readonly) NSInteger selectedIndex;
 
 
