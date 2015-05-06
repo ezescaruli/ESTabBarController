@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "ArchiveViewController.h"
 #import "ClockViewController.h"
+#import "MapViewController.h"
 
 
 @implementation ViewController
@@ -43,7 +44,7 @@
     [tabBarController setViewController:[[ClockViewController alloc] init]
                                 atIndex:1];
     
-    [tabBarController setViewController:[[UIViewController alloc] init]
+    [tabBarController setViewController:[[MapViewController alloc] init]
                                 atIndex:3];
     
     [tabBarController setViewController:[[UIViewController alloc] init]
