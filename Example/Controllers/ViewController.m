@@ -52,6 +52,31 @@
                                 atIndex:4];
     
     [tabBarController highlightButtonAtIndex:2];
+    
+    __weak typeof (self) weakSelf = self;
+    
+    [tabBarController setAction:^{
+        [weakSelf showAlertViewWithTitle:@"Highlighted"
+                                 message:@"You have chosen the highlighted tab button."];
+    } atIndex:2];
+    
+    [tabBarController setAction:^{
+        [weakSelf showAlertViewWithTitle:@"Globe"
+                                 message:@"You have chosen the globe view controller."];
+    } atIndex:4];
+}
+
+
+#pragma mark - Private methods
+
+
+- (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 

@@ -96,6 +96,11 @@
     
     if (index != NSNotFound) {
         [self moveToControllerAtIndex:index animated:YES];
+        
+        void (^action)(void) = self.actions[@(index)];
+        if (action != nil) {
+            action();
+        }
     }
 }
 
