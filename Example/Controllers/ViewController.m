@@ -9,6 +9,7 @@
 #import <ESTabBarController/ESTabBarController.h>
 
 #import "ViewController.h"
+#import "ArchiveViewController.h"
 
 
 @implementation ViewController
@@ -29,7 +30,7 @@
     
     [tabBarController didMoveToParentViewController:self];
     
-    [tabBarController setViewController:[self viewControllerWithImageNamed:@"archive"]
+    [tabBarController setViewController:[self archiveViewController]
                                 atIndex:0];
     
     [tabBarController setViewController:[self viewControllerWithImageNamed:@"clock"]
@@ -49,6 +50,14 @@
 
 
 #pragma mark - Private methods
+
+
+- (ArchiveViewController *)archiveViewController {
+    ArchiveViewController *vc = [[ArchiveViewController alloc] init];
+    vc.tabBarItem.image = [UIImage imageNamed:@"archive"];
+    
+    return vc;
+}
 
 
 - (UIViewController *)viewControllerWithImageNamed:(NSString *)imageName {

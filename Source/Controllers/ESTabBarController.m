@@ -171,7 +171,6 @@
             [controller didMoveToParentViewController:self];
         }
         
-        controller.view.translatesAutoresizingMaskIntoConstraints = NO;
         [self.view addSubview:controller.view];
         controller.view.frame = self.controllersContainer.bounds;
         
