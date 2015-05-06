@@ -13,7 +13,7 @@
 
 @property (nonatomic, weak) UIView *buttonsContainer;
 @property (nonatomic, strong) NSMutableArray *buttons;
-@property (nonatomic, assign) NSInteger controllersAmount;
+@property (nonatomic, assign) NSArray *tabIcons;
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
 
@@ -28,7 +28,7 @@
 
 
 - (void)setupButtonsConstraints {
-    for (NSInteger i = 0; i < self.controllersAmount; i++) {
+    for (NSInteger i = 0; i < self.tabIcons.count; i++) {
         [self.buttons[i] setTranslatesAutoresizingMaskIntoConstraints:NO];
         
         [self.view addConstraints:[self leftLayoutConstraintsForButtonAtIndex:i]];

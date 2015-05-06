@@ -25,15 +25,9 @@ typedef void (^ESTabBarAction)(void);
 
 
 /**
- Initializes the tab bar with the amount of controllers that it will show.
+ Initializes the tab bar with the icons to be shown in each tab button.
  */
-- (instancetype)initWithControllersAmount:(NSInteger)controllersAmount;
-
-
-/**
- Sets the icons to be shown in each tab button.
- */
-- (void)setTabIcons:(NSArray *)tabIcons;
+- (instancetype)initWithTabIcons:(NSArray *)tabIcons;
 
 
 /**

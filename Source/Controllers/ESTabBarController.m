@@ -16,7 +16,6 @@
 @property (nonatomic, weak) IBOutlet UIView *controllersContainer;
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
 
-@property (nonatomic, assign) NSInteger controllersAmount;
 @property (nonatomic, strong) NSMutableDictionary *controllers;
 @property (nonatomic, strong) NSMutableDictionary *actions;
 @property (nonatomic, assign) BOOL didSetupInterface;
@@ -35,11 +34,11 @@
 #pragma mark - Init
 
 
-- (instancetype)initWithControllersAmount:(NSInteger)controllersAmount {
+- (instancetype)initWithTabIcons:(NSArray *)tabIcons {
     self = [self initWithNibName:@"ESTabBarController" bundle:nil];
     
     if (self != nil) {
-        [self initializeWithControllersAmount:controllersAmount];
+        [self initializeWithTabIcons:tabIcons];
     }
     
     return self;
@@ -57,15 +56,6 @@
 
 
 #pragma mark - Public methods
-
-
-- (void)setTabIcons:(NSArray *)tabIcons {
-    NSAssert(tabIcons.count == self.controllersAmount,
-             @"The amount of tab icons should be equal to the controllers amount.");
-    
-    _tabIcons = tabIcons;
-    [self setupInterfaceIfNeeded];
-}
 
 
 - (void)setViewController:(UIViewController *)viewController
@@ -108,14 +98,14 @@
 #pragma mark - Private methods
 
 
-- (void)initializeWithControllersAmount:(NSInteger)controllersAmount {
-    NSAssert(controllersAmount > 0,
-             @"The controllers amount should be greater than zero.");
+- (void)initializeWithTabIcons:(NSArray *)tabIcons {
+    NSAssert(tabIcons.count > 0,
+             @"The array of tab icons shouldn't be empty.");
     
-    self.controllersAmount = controllersAmount;
+    _tabIcons = tabIcons;
     
-    self.controllers = [NSMutableDictionary dictionaryWithCapacity:controllersAmount];
-    self.actions = [NSMutableDictionary dictionaryWithCapacity:controllersAmount];
+    self.controllers = [NSMutableDictionary dictionaryWithCapacity:tabIcons.count];
+    self.actions = [NSMutableDictionary dictionaryWithCapacity:tabIcons.count];
     
     self.highlightedButtonIndexes = [NSMutableSet set];
 }
@@ -142,9 +132,9 @@
         [button removeFromSuperview];
     }
     
-    self.buttons = [NSMutableArray arrayWithCapacity:self.controllersAmount];
+    self.buttons = [NSMutableArray arrayWithCapacity:self.tabIcons.count];
     
-    for (NSInteger i = 0; i < self.controllersAmount; i++) {
+    for (NSInteger i = 0; i < self.tabIcons.count; i++) {
         UIButton *button = [self createButtonForIndex:i];
         
         [self.buttonsContainer addSubview:button];

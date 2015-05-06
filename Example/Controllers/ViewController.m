@@ -24,7 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ESTabBarController *tabBarController = [[ESTabBarController alloc] initWithControllersAmount:5];
+    ESTabBarController *tabBarController = [[ESTabBarController alloc] initWithTabIcons:@[[UIImage imageNamed:@"archive"],
+                                                                                          [UIImage imageNamed:@"clock"],
+                                                                                          [UIImage imageNamed:@"target"],
+                                                                                          [UIImage imageNamed:@"map"],
+                                                                                          [UIImage imageNamed:@"globe"]]];
     
     [self addChildViewController:tabBarController];
     
@@ -32,12 +36,6 @@
     tabBarController.view.frame = self.view.bounds;
     
     [tabBarController didMoveToParentViewController:self];
-    
-    [tabBarController setTabIcons:@[[UIImage imageNamed:@"archive"],
-                                    [UIImage imageNamed:@"clock"],
-                                    [UIImage imageNamed:@"target"],
-                                    [UIImage imageNamed:@"map"],
-                                    [UIImage imageNamed:@"globe"]]];
     
     [tabBarController setViewController:[[ArchiveViewController alloc] init]
                                 atIndex:0];
