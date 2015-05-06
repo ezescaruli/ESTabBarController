@@ -7,6 +7,7 @@
 //
 
 #import <ESTabBarController/ESTabBarController.h>
+#import <UIColor-HexString/UIColor+HexString.h>
 
 #import "ViewController.h"
 #import "ArchiveViewController.h"
@@ -53,6 +54,11 @@
     
     [tabBarController setViewController:[[GlobeViewController alloc] init]
                                 atIndex:4];
+    
+    // Colors.
+    
+    tabBarController.selectedColor = [UIColor colorWithHexString:@"#CD5B45"];
+    tabBarController.buttonsBackgroundColor = [UIColor colorWithHexString:@"#F6EBE0"];
     
     // Highlighted buttons.
     

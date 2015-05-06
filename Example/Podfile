@@ -1,1 +1,2 @@
 pod 'ESTabBarController', path: '..'
+pod 'UIColor-HexString'

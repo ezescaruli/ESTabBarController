@@ -72,14 +72,12 @@
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index {
     self.controllers[@(index)] = viewController;
-    [self setupInterfaceIfNeeded];
 }
 
 
 - (void)setAction:(ESTabBarAction)action
           atIndex:(NSInteger)index {
     self.actions[@(index)] = action;
-    [self setupInterfaceIfNeeded];
 }
 
 
@@ -96,8 +94,10 @@
     NSInteger index = [self.buttons indexOfObject:button];
     
     if (index != NSNotFound) {
+        // Show the selected view controller.
         [self moveToControllerAtIndex:index animated:YES];
         
+        // Run the action if necessary.
         void (^action)(void) = self.actions[@(index)];
         if (action != nil) {
             action();
@@ -174,6 +174,12 @@
 
 
 - (void)moveToControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
+    // Deselect all the buttons excepting the selected one.
+    for (NSInteger i = 0; i < self.buttons.count; i++) {
+        UIButton *button = self.buttons[i];
+        button.selected = (i == index);
+    }
+    
     UIViewController *controller = self.controllers[@(index)];
     
     if (controller != nil) {
