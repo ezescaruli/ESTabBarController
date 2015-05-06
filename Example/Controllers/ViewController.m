@@ -12,6 +12,7 @@
 #import "ArchiveViewController.h"
 #import "ClockViewController.h"
 #import "MapViewController.h"
+#import "GlobeViewController.h"
 
 
 @implementation ViewController
@@ -47,7 +48,7 @@
     [tabBarController setViewController:[[MapViewController alloc] init]
                                 atIndex:3];
     
-    [tabBarController setViewController:[[UIViewController alloc] init]
+    [tabBarController setViewController:[[GlobeViewController alloc] init]
                                 atIndex:4];
     
     [tabBarController highlightButtonAtIndex:2];

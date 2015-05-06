@@ -15,6 +15,8 @@
 		F0043A221AF9A43000AD6E62 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0043A201AF9A43000AD6E62 /* MapViewController.m */; };
 		F0043A231AF9A43000AD6E62 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0043A211AF9A43000AD6E62 /* MapViewController.xib */; };
 		F0043A251AF9A52100AD6E62 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0043A241AF9A52100AD6E62 /* MapKit.framework */; };
+		F0043A2A1AF9AC4E00AD6E62 /* GlobeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0043A281AF9AC4E00AD6E62 /* GlobeViewController.m */; };
+		F0043A2B1AF9AC4E00AD6E62 /* GlobeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0043A291AF9AC4E00AD6E62 /* GlobeViewController.xib */; };
 		F097AEE71AF7146600187883 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F097AEE41AF7146600187883 /* AppDelegate.m */; };
 		F097AEE91AF7146600187883 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F097AEE61AF7146600187883 /* main.m */; };
 		F097AEED1AF7158A00187883 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F097AEEB1AF7158A00187883 /* LaunchScreen.xib */; };
@@ -37,6 +39,9 @@
 		F0043A201AF9A43000AD6E62 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		F0043A211AF9A43000AD6E62 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		F0043A241AF9A52100AD6E62 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F0043A271AF9AC4E00AD6E62 /* GlobeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobeViewController.h; sourceTree = "<group>"; };
+		F0043A281AF9AC4E00AD6E62 /* GlobeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobeViewController.m; sourceTree = "<group>"; };
+		F0043A291AF9AC4E00AD6E62 /* GlobeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlobeViewController.xib; sourceTree = "<group>"; };
 		F097AEB91AF7124000187883 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F097AEE31AF7146600187883 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F097AEE41AF7146600187883 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +106,16 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		F0043A261AF9AC4000AD6E62 /* Globe */ = {
+			isa = PBXGroup;
+			children = (
+				F0043A271AF9AC4E00AD6E62 /* GlobeViewController.h */,
+				F0043A281AF9AC4E00AD6E62 /* GlobeViewController.m */,
+				F0043A291AF9AC4E00AD6E62 /* GlobeViewController.xib */,
+			);
+			path = Globe;
+			sourceTree = "<group>";
+		};
 		F097AEB01AF7124000187883 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +171,7 @@
 				F0043A121AF9984800AD6E62 /* Archive */,
 				F0043A181AF99E1200AD6E62 /* Clock */,
 				F0043A1E1AF9A42600AD6E62 /* Map */,
+				F0043A261AF9AC4000AD6E62 /* Globe */,
 				F097AEF31AF715D000187883 /* ViewController.h */,
 				F097AEF41AF715D000187883 /* ViewController.m */,
 			);
@@ -231,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F097AEEE1AF7158A00187883 /* Main.storyboard in Resources */,
+				F0043A2B1AF9AC4E00AD6E62 /* GlobeViewController.xib in Resources */,
 				F0043A231AF9A43000AD6E62 /* MapViewController.xib in Resources */,
 				F097AEF11AF715A700187883 /* Images.xcassets in Resources */,
 				F097AEED1AF7158A00187883 /* LaunchScreen.xib in Resources */,
@@ -285,6 +302,7 @@
 				F0043A221AF9A43000AD6E62 /* MapViewController.m in Sources */,
 				F097AEF51AF715D000187883 /* ViewController.m in Sources */,
 				F0043A151AF9986600AD6E62 /* ArchiveViewController.m in Sources */,
+				F0043A2A1AF9AC4E00AD6E62 /* GlobeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
