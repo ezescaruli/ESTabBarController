@@ -6,6 +6,9 @@ ESTabBarController
 `ESTabBarController` is a custom tab bar controller for iOS. It has a tab indicator that moves animated along the bar when switching between tabs. It also provides the capability of running actions associated with the tab bar buttons.
 
 
+<img src="./Readme/Demo.gif" alt="Demo" width="320"/>
+
+
 ## Installation
 
 Simply add `ESTabBarController` to your `Podfile`:
@@ -73,9 +76,11 @@ tabBarController.selectedColor = [UIColor redColor]; // Any color.
 tabBarController.buttonBackgroundColor = [UIColor grayColor]; // Any color.
 ```
 
+### Example
+
 More usage information can be found in the Example project.
 
 
-### License
+## License
 
 This library is available under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
