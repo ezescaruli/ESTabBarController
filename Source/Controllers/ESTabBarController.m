@@ -195,8 +195,9 @@
             [controller didMoveToParentViewController:self];
         }
         
-        [self.view addSubview:controller.view];
-        controller.view.frame = self.controllersContainer.bounds;
+        controller.view.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.controllersContainer addSubview:controller.view];
+        [self setupConstraintsForChildController:controller];
         
         [self moveSelectionIndicatorToIndex:index animated:animated];
         

@@ -11,6 +11,7 @@
 
 @interface ESTabBarController ()
 
+@property (nonatomic, weak) UIView *controllersContainer;
 @property (nonatomic, weak) UIView *buttonsContainer;
 @property (nonatomic, strong) NSMutableArray *buttons;
 @property (nonatomic, assign) NSArray *tabIcons;
@@ -45,6 +46,23 @@
     [self.buttonsContainer addConstraints:[self widthLayoutConstraintsForIndicator]];
     [self.buttonsContainer addConstraints:[self heightLayoutConstraintsForIndicator]];
     [self.buttonsContainer addConstraints:[self bottomLayoutConstraintsForIndicator]];
+}
+
+
+- (void)setupConstraintsForChildController:(UIViewController *)controller {
+    NSDictionary *views = @{@"view": controller.view};
+    
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[view]-0-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:views];
+    [self.controllersContainer addConstraints:horizontalConstraints];
+    
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:views];
+    [self.controllersContainer addConstraints:verticalConstraints];
 }
 
 

@@ -13,5 +13,6 @@
 
 - (void)setupButtonsConstraints;
 - (void)setupSelectionIndicatorConstraints;
+- (void)setupConstraintsForChildController:(UIViewController *)controller;
 
 @end
