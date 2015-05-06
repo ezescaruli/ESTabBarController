@@ -22,6 +22,7 @@
 @property (nonatomic, assign) BOOL didSetupInterface;
 @property (nonatomic, strong) NSMutableArray *buttons;
 @property (nonatomic, strong) NSMutableSet *highlightedButtonIndexes;
+@property (nonatomic, strong) NSArray *tabIcons;
 
 @end
 
@@ -54,6 +55,15 @@
 
 
 #pragma mark - Public methods
+
+
+- (void)setTabIcons:(NSArray *)tabIcons {
+    NSAssert(tabIcons.count == self.controllersAmount,
+             @"The amount of tab icons should be equal to the controllers amount.");
+    
+    _tabIcons = tabIcons;
+    [self setupInterfaceIfNeeded];
+}
 
 
 - (void)setViewController:(UIViewController *)viewController
@@ -141,9 +151,8 @@
 - (UIButton *)createButtonForIndex:(NSInteger)index {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    UIImage *buttonImage = [self.controllers[@(index)] tabBarItem].image;
     BOOL isHighlighted = [self.highlightedButtonIndexes containsObject:@(index)];
-    [button customizeForTabBarWithImage:buttonImage
+    [button customizeForTabBarWithImage:self.tabIcons[index]
                           selectedColor:self.selectedColor ?: [UIColor blackColor]
                             highlighted:isHighlighted];
     
@@ -159,7 +168,7 @@
     UIViewController *controller = self.controllers[@(index)];
     
     if (controller != nil) {
-        if (self.selectedIndex > 0) {
+        if (self.selectedIndex >= 0) {
             // Remove the current controller's view.
             UIViewController *currentController = self.controllers[@(self.selectedIndex)];
             [currentController.view removeFromSuperview];

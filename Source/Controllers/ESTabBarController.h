@@ -30,6 +30,12 @@ typedef void (^ESTabBarAction)(void);
 
 
 /**
+ Sets the icons to be shown in each tab button.
+ */
+- (void)setTabIcons:(NSArray *)tabIcons;
+
+
+/**
  Sets the view controller to be shown when tapping a button at a specific
  index.
  */

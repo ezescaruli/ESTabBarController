@@ -31,49 +31,25 @@
     
     [tabBarController didMoveToParentViewController:self];
     
-    [tabBarController setViewController:[self archiveViewController]
+    [tabBarController setTabIcons:@[[UIImage imageNamed:@"archive"],
+                                    [UIImage imageNamed:@"clock"],
+                                    [UIImage imageNamed:@"target"],
+                                    [UIImage imageNamed:@"map"],
+                                    [UIImage imageNamed:@"globe"]]];
+    
+    [tabBarController setViewController:[[ArchiveViewController alloc] init]
                                 atIndex:0];
     
-    [tabBarController setViewController:[self clockViewController]
+    [tabBarController setViewController:[[ClockViewController alloc] init]
                                 atIndex:1];
     
-    [tabBarController setViewController:[self viewControllerWithImageNamed:@"target"]
-                                atIndex:2];
-    
-    [tabBarController setViewController:[self viewControllerWithImageNamed:@"map"]
+    [tabBarController setViewController:[[UIViewController alloc] init]
                                 atIndex:3];
     
-    [tabBarController setViewController:[self viewControllerWithImageNamed:@"globe"]
+    [tabBarController setViewController:[[UIViewController alloc] init]
                                 atIndex:4];
     
     [tabBarController highlightButtonAtIndex:2];
-}
-
-
-#pragma mark - Private methods
-
-
-- (ArchiveViewController *)archiveViewController {
-    ArchiveViewController *vc = [[ArchiveViewController alloc] init];
-    vc.tabBarItem.image = [UIImage imageNamed:@"archive"];
-    
-    return vc;
-}
-
-
-- (ClockViewController *)clockViewController {
-    ClockViewController *vc = [[ClockViewController alloc] init];
-    vc.tabBarItem.image = [UIImage imageNamed:@"clock"];
-    
-    return vc;
-}
-
-
-- (UIViewController *)viewControllerWithImageNamed:(NSString *)imageName {
-    UIViewController *viewController = [[UIViewController alloc] init];
-    viewController.tabBarItem.image = [UIImage imageNamed:imageName];
-    
-    return viewController;
 }
 
 
