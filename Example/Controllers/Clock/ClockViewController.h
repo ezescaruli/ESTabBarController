@@ -1,5 +1,5 @@
 //
-//  ArchiveViewController.h
+//  ClockViewController.h
 //  Example
 //
 //  Created by Ezequiel Scaruli on 5/6/15.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface ArchiveViewController : UIViewController
+@interface ClockViewController : UIViewController
 
 @end

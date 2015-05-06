@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import "ArchiveViewController.h"
+#import "ClockViewController.h"
 
 
 @implementation ViewController
@@ -33,7 +34,7 @@
     [tabBarController setViewController:[self archiveViewController]
                                 atIndex:0];
     
-    [tabBarController setViewController:[self viewControllerWithImageNamed:@"clock"]
+    [tabBarController setViewController:[self clockViewController]
                                 atIndex:1];
     
     [tabBarController setViewController:[self viewControllerWithImageNamed:@"target"]
@@ -55,6 +56,14 @@
 - (ArchiveViewController *)archiveViewController {
     ArchiveViewController *vc = [[ArchiveViewController alloc] init];
     vc.tabBarItem.image = [UIImage imageNamed:@"archive"];
+    
+    return vc;
+}
+
+
+- (ClockViewController *)clockViewController {
+    ClockViewController *vc = [[ClockViewController alloc] init];
+    vc.tabBarItem.image = [UIImage imageNamed:@"clock"];
     
     return vc;
 }
