@@ -5,6 +5,8 @@ ESTabBarController
 
 `ESTabBarController` is a custom tab bar controller for iOS. It has a tab indicator that moves animated along the bar when switching between tabs. It also provides the capability of running actions associated with the tab bar buttons.
 
+Compatible with iOS 7.0 and above.
+
 
 <img src="./Readme/Demo.gif" alt="Demo" width="320"/>
 
