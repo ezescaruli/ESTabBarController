@@ -15,29 +15,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="Eou-VO-jkj">
-                    <rect key="frame" x="176" y="298" width="24" height="24"/>
+                    <rect key="frame" x="176" y="30" width="24" height="24"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK6-X6-gtT">
-                    <rect key="frame" x="165" y="338" width="45" height="21"/>
+                    <rect key="frame" x="165" y="70" width="45" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-O2-KhC">
-                    <rect key="frame" x="165" y="617" width="46" height="30"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6kV-pL-PdR">
+                    <rect key="frame" x="0.0" y="107" width="375" height="560"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="Eou-VO-jkj" secondAttribute="centerY" constant="24" id="JTq-Lu-xTG"/>
+                <constraint firstItem="Eou-VO-jkj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="5vi-TD-VFR"/>
+                <constraint firstAttribute="trailing" secondItem="6kV-pL-PdR" secondAttribute="trailing" id="DM4-4A-bqJ"/>
+                <constraint firstItem="6kV-pL-PdR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KVr-xu-ibp"/>
+                <constraint firstItem="6kV-pL-PdR" firstAttribute="top" secondItem="hK6-X6-gtT" secondAttribute="bottom" constant="16" id="LeR-hf-RH7"/>
                 <constraint firstItem="hK6-X6-gtT" firstAttribute="top" secondItem="Eou-VO-jkj" secondAttribute="bottom" constant="16" id="XkI-d3-LCj"/>
                 <constraint firstAttribute="centerX" secondItem="hK6-X6-gtT" secondAttribute="centerX" id="fMT-Ff-SiI"/>
-                <constraint firstAttribute="bottom" secondItem="Jsi-O2-KhC" secondAttribute="bottom" constant="20" id="rLb-4j-Otw"/>
                 <constraint firstAttribute="centerX" secondItem="Eou-VO-jkj" secondAttribute="centerX" id="rjv-Vm-mbq"/>
-                <constraint firstAttribute="centerX" secondItem="Jsi-O2-KhC" secondAttribute="centerX" id="vVw-gZ-hIt"/>
+                <constraint firstAttribute="bottom" secondItem="6kV-pL-PdR" secondAttribute="bottom" id="wQr-qJ-iwa"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

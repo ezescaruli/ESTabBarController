@@ -23,23 +23,21 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a test text view for the globe view controller." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lss-G9-9LS">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="m39-TA-JVT">
                     <rect key="frame" x="0.0" y="107" width="375" height="560"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Lss-G9-9LS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EAL-uW-nar"/>
                 <constraint firstAttribute="centerX" secondItem="xjh-GS-rPK" secondAttribute="centerX" id="Gfe-Zj-dyt"/>
                 <constraint firstItem="xjh-GS-rPK" firstAttribute="top" secondItem="Dhq-dj-e4y" secondAttribute="bottom" constant="16" id="M91-tL-39q"/>
                 <constraint firstItem="Dhq-dj-e4y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="QVC-ud-DuF"/>
-                <constraint firstAttribute="bottom" secondItem="Lss-G9-9LS" secondAttribute="bottom" id="dDh-oq-mW8"/>
+                <constraint firstAttribute="trailing" secondItem="m39-TA-JVT" secondAttribute="trailing" id="Ybh-Ef-vKg"/>
+                <constraint firstItem="m39-TA-JVT" firstAttribute="top" secondItem="xjh-GS-rPK" secondAttribute="bottom" constant="16" id="den-l6-57n"/>
                 <constraint firstAttribute="centerX" secondItem="Dhq-dj-e4y" secondAttribute="centerX" id="hDh-0w-VwH"/>
-                <constraint firstItem="Lss-G9-9LS" firstAttribute="top" secondItem="xjh-GS-rPK" secondAttribute="bottom" constant="16" id="hEN-WW-Dj7"/>
-                <constraint firstAttribute="trailing" secondItem="Lss-G9-9LS" secondAttribute="trailing" id="tC9-Ar-B82"/>
+                <constraint firstAttribute="bottom" secondItem="m39-TA-JVT" secondAttribute="bottom" id="tqe-IE-XJL"/>
+                <constraint firstItem="m39-TA-JVT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wKa-n7-a44"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
