@@ -96,8 +96,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setupInterface];
-    [self moveToControllerAtIndex:0 animated:NO];
+    
+    if (self.selectedIndex == -1) {
+        // We only setup everything if there isn't any selected index.
+        [self setupInterface];
+        [self moveToControllerAtIndex:0 animated:NO];
+    }
 }
 
 
