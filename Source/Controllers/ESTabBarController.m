@@ -57,6 +57,22 @@
 }
 
 
+#pragma mark - Getters / Setters
+
+
+- (void)setSelectedColor:(UIColor *)selectedColor {
+    if (_selectedColor != selectedColor) {
+        _selectedColor = selectedColor;
+    }
+    
+    [self updateInterfaceIfNeeded];
+    
+    // Select the current button again to reflect the color change.
+    UIButton *selectedButton = self.buttons[self.selectedIndex];
+    selectedButton.selected = YES;
+}
+
+
 #pragma mark - UIViewController
 
 
@@ -84,7 +100,7 @@
 
 - (void)highlightButtonAtIndex:(NSInteger)index {
     [self.highlightedButtonIndexes addObject:@(index)];
-    [self setupInterfaceIfNeeded];
+    [self updateInterfaceIfNeeded];
 }
 
 
@@ -135,7 +151,7 @@
 }
 
 
-- (void)setupInterfaceIfNeeded {
+- (void)updateInterfaceIfNeeded {
     if (self.didSetupInterface) {
         // If the UI was already setup, it's necessary to update it.
         [self setupInterface];
@@ -152,21 +168,20 @@
 
 
 - (void)setupButtons {
-    // First, I remove the previous buttons. They could have an outdated image.
-    for (UIButton *button in self.buttons) {
-        [button removeFromSuperview];
-    }
-    
-    self.buttons = [NSMutableArray arrayWithCapacity:self.tabIcons.count];
-    
-    for (NSInteger i = 0; i < self.tabIcons.count; i++) {
-        UIButton *button = [self createButtonForIndex:i];
+    if (self.buttons == nil) {
+        self.buttons = [NSMutableArray arrayWithCapacity:self.tabIcons.count];
         
-        [self.buttonsContainer addSubview:button];
-        self.buttons[i] = button;
+        for (NSInteger i = 0; i < self.tabIcons.count; i++) {
+            UIButton *button = [self createButtonForIndex:i];
+            
+            [self.buttonsContainer addSubview:button];
+            self.buttons[i] = button;
+        }
+        
+        [self setupButtonsConstraints];
     }
     
-    [self setupButtonsConstraints];
+    [self customizeButtons];
     self.buttonsContainer.backgroundColor = self.buttonsBackgroundColor ?: [UIColor lightGrayColor];
 }
 
@@ -174,16 +189,24 @@
 - (UIButton *)createButtonForIndex:(NSInteger)index {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    BOOL isHighlighted = [self.highlightedButtonIndexes containsObject:@(index)];
-    [button customizeForTabBarWithImage:self.tabIcons[index]
-                          selectedColor:self.selectedColor ?: [UIColor blackColor]
-                            highlighted:isHighlighted];
-    
     [button addTarget:self
                action:@selector(tabButtonAction:)
      forControlEvents:UIControlEventTouchUpInside];
     
     return button;
+}
+
+
+- (void)customizeButtons {
+    for (NSInteger i = 0; i < self.tabIcons.count; i++) {
+        UIButton *button = self.buttons[i];
+        
+        BOOL isHighlighted = [self.highlightedButtonIndexes containsObject:@(i)];
+        [button customizeForTabBarWithImage:self.tabIcons[i]
+                              selectedColor:self.selectedColor ?: [UIColor blackColor]
+                                highlighted:isHighlighted];
+
+    }
 }
 
 
@@ -226,17 +249,15 @@
 
 
 - (void)setupSelectionIndicator {
-    if (self.selectionIndicator != nil) {
-        // We already set up the selection indicator.
-        return;
+    if (self.selectionIndicator == nil) {
+        self.selectionIndicator = [[UIView alloc] init];
+        self.selectionIndicator.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.buttonsContainer addSubview:self.selectionIndicator];
+        
+        [self setupSelectionIndicatorConstraints];
     }
     
-    self.selectionIndicator = [[UIView alloc] init];
-    self.selectionIndicator.translatesAutoresizingMaskIntoConstraints = NO;
     self.selectionIndicator.backgroundColor = self.selectedColor ?: [UIColor blackColor];
-    [self.buttonsContainer addSubview:self.selectionIndicator];
-    
-    [self setupSelectionIndicatorConstraints];
 }
 
 
