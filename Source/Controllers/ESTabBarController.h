@@ -59,4 +59,10 @@ typedef void (^ESTabBarAction)(void);
 - (void)highlightButtonAtIndex:(NSInteger)index;
 
 
+/**
+ Sets whether the separator line is visible or not. By default, it is not.
+ */
+- (void)setSeparatorLineVisible:(BOOL)visible;
+
+
 @end

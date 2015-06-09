@@ -15,6 +15,7 @@
 
 @property (nonatomic, weak) IBOutlet UIView *controllersContainer;
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
+@property (nonatomic, weak) IBOutlet UIView *separatorLine;
 
 @property (nonatomic, strong) NSMutableDictionary *controllers;
 @property (nonatomic, strong) NSMutableDictionary *actions;
@@ -87,6 +88,15 @@
 }
 
 
+- (void)setSeparatorLineVisible:(BOOL)visible {
+    self.separatorLine.hidden = !visible;
+    
+    if (visible) {
+        [self setupSeparatorLine];
+    }
+}
+
+
 #pragma mark - Action
 
 
@@ -136,6 +146,7 @@
 - (void)setupInterface {
     [self setupButtons];
     [self setupSelectionIndicator];
+    [self setupSeparatorLine];
     self.didSetupInterface = YES;
 }
 
@@ -226,6 +237,11 @@
     [self.buttonsContainer addSubview:self.selectionIndicator];
     
     [self setupSelectionIndicatorConstraints];
+}
+
+
+- (void)setupSeparatorLine {
+    self.separatorLine.backgroundColor = self.selectedColor ?: [UIColor blackColor];
 }
 
 
