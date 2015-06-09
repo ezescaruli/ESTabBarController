@@ -231,15 +231,15 @@
         return;
     }
     
-    // Deselect all the buttons excepting the selected one.
-    for (NSInteger i = 0; i < self.buttons.count; i++) {
-        UIButton *button = self.buttons[i];
-        button.selected = (i == index);
-    }
-    
     UIViewController *controller = self.controllers[@(index)];
     
     if (controller != nil) {
+        // Deselect all the buttons excepting the selected one.
+        for (NSInteger i = 0; i < self.buttons.count; i++) {
+            UIButton *button = self.buttons[i];
+            button.selected = (i == index);
+        }
+        
         if (self.selectedIndex >= 0) {
             // Remove the current controller's view.
             UIViewController *currentController = self.controllers[@(self.selectedIndex)];
