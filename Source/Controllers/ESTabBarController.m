@@ -73,6 +73,24 @@
 }
 
 
+- (void)setSeparatorLineVisible:(BOOL)visible {
+    if (_separatorLineVisible != visible) {
+        _separatorLineVisible = visible;
+    }
+    
+    [self setupSeparatorLine];
+}
+
+
+- (void)setSeparatorLineColor:(UIColor *)color {
+    if (_separatorLineColor != color) {
+        _separatorLineColor = color;
+    }
+    
+    self.separatorLine.backgroundColor = color;
+}
+
+
 #pragma mark - UIViewController
 
 
@@ -101,15 +119,6 @@
 - (void)highlightButtonAtIndex:(NSInteger)index {
     [self.highlightedButtonIndexes addObject:@(index)];
     [self updateInterfaceIfNeeded];
-}
-
-
-- (void)setSeparatorLineVisible:(BOOL)visible {
-    self.separatorLine.hidden = !visible;
-    
-    if (visible) {
-        [self setupSeparatorLine];
-    }
 }
 
 
@@ -148,6 +157,8 @@
     
     // No selected index at first.
     _selectedIndex = -1;
+    
+    self.separatorLineColor = [UIColor lightGrayColor];
 }
 
 
@@ -262,7 +273,8 @@
 
 
 - (void)setupSeparatorLine {
-    self.separatorLine.backgroundColor = self.selectedColor ?: [UIColor blackColor];
+    self.separatorLine.backgroundColor = self.separatorLineColor;
+    self.separatorLine.hidden = !self.separatorLineVisible;
 }
 
 

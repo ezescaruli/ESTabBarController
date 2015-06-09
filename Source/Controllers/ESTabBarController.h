@@ -23,6 +23,12 @@ typedef void (^ESTabBarAction)(void);
 /// The index (starting from 0) of the view controller being shown.
 @property (nonatomic, readonly) NSInteger selectedIndex;
 
+/// Defaults to NO.
+@property (nonatomic, assign) BOOL separatorLineVisible;
+
+// Defaults to [UIColor lightGrayColor].
+@property (nonatomic, strong) UIColor *separatorLineColor;
+
 
 /**
  Initializes the tab bar with an array of UIImage that will be the icons
@@ -57,12 +63,6 @@ typedef void (^ESTabBarAction)(void);
  Makes a button at a specific index look highlighted.
  */
 - (void)highlightButtonAtIndex:(NSInteger)index;
-
-
-/**
- Sets whether the separator line is visible or not. By default, it is not.
- */
-- (void)setSeparatorLineVisible:(BOOL)visible;
 
 
 @end
