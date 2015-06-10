@@ -126,6 +126,23 @@
 }
 
 
+- (void)setButtonTintColor:(UIColor *)color atIndex:(NSInteger)index {
+    if (![self.highlightedButtonIndexes containsObject:@(index)]) {
+        UIButton *button = self.buttons[index];
+        
+        button.tintColor = color;
+        
+        UIImage *buttonImage = [button imageForState:UIControlStateNormal];
+        
+        [button setImage:[buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+                forState:UIControlStateNormal];
+        
+        [button setImage:[buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]
+                forState:UIControlStateSelected];
+    }
+}
+
+
 #pragma mark - Action
 
 

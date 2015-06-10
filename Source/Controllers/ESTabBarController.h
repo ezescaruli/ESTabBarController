@@ -65,4 +65,11 @@ typedef void (^ESTabBarAction)(void);
 - (void)highlightButtonAtIndex:(NSInteger)index;
 
 
+/**
+ Sets the tint color of a button at a specified index.
+ It only works for non highlighted buttons.
+ */
+- (void)setButtonTintColor:(UIColor *)color atIndex:(NSInteger)index;
+
+
 @end
