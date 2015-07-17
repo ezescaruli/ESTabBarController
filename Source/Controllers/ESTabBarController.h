@@ -76,4 +76,10 @@ typedef void (^ESTabBarAction)(void);
 - (void)setButtonTintColor:(UIColor *)color atIndex:(NSInteger)index;
 
 
+/**
+ Hides the bottom bar. Can be animated.
+ */
+- (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated;
+
+
 @end

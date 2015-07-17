@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UIView *separatorLine;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *separatorLineHeightConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *buttonsContainerHeightConstraint;
 
 @property (nonatomic, strong) NSMutableDictionary *controllers;
 @property (nonatomic, strong) NSMutableDictionary *actions;
@@ -27,6 +28,7 @@
 @property (nonatomic, strong) NSArray *tabIcons;
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
+@property (nonatomic, assign) CGFloat buttonsContainerHeightConstraintInitialConstant;
 
 @end
 
@@ -96,6 +98,12 @@
 #pragma mark - UIViewController
 
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.buttonsContainerHeightConstraintInitialConstant = self.buttonsContainerHeightConstraint.constant;
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -107,7 +115,7 @@
 }
 
 
-#pragma mark - Public methods
+#pragma mark - ESTabBarController
 
 
 - (void)setViewController:(UIViewController *)viewController
@@ -145,7 +153,22 @@
 }
 
 
-#pragma mark - Action
+- (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated {
+    void (^animations)(void) = ^{
+        self.buttonsContainerHeightConstraint.constant = hidden ? 0 : self.buttonsContainerHeightConstraintInitialConstant;
+        [self.view layoutIfNeeded];
+    };
+    
+    if (animated) {
+        [self.view layoutIfNeeded];
+        [UIView animateWithDuration:0.5 animations:animations];
+    } else {
+        animations();
+    }
+}
+
+
+#pragma mark - Actions
 
 
 - (void)tabButtonAction:(UIButton *)button {

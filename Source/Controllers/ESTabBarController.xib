@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ESTabBarController">
             <connections>
                 <outlet property="buttonsContainer" destination="rnh-Bk-CM2" id="vDs-dD-sEZ"/>
+                <outlet property="buttonsContainerHeightConstraint" destination="zkk-B5-Edr" id="fHM-Ec-idA"/>
                 <outlet property="controllersContainer" destination="0q1-KL-VrI" id="rzn-Ao-FnZ"/>
                 <outlet property="separatorLine" destination="TvY-3J-0zk" id="mc9-OU-J8U"/>
                 <outlet property="separatorLineHeightConstraint" destination="U3F-yi-lsO" id="lFU-SF-nJT"/>
@@ -25,7 +26,7 @@
                         <constraint firstAttribute="height" constant="50" id="zkk-B5-Edr"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q1-KL-VrI">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q1-KL-VrI" userLabel="Controllers container">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvY-3J-0zk" userLabel="Separator line">
@@ -53,7 +54,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="680.5" y="588.5"/>
+            <point key="canvasLocation" x="734.5" y="567.5"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
