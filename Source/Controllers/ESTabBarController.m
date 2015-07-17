@@ -168,6 +168,18 @@
 }
 
 
+- (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated {
+    // Show the selected view controller.
+    [self moveToControllerAtIndex:selectedIndex animated:animated];
+    
+    // Run the action if necessary.
+    void (^action)(void) = self.actions[@(selectedIndex)];
+    if (action != nil) {
+        action();
+    }
+}
+
+
 #pragma mark - Actions
 
 
@@ -175,14 +187,7 @@
     NSInteger index = [self.buttons indexOfObject:button];
     
     if (index != NSNotFound) {
-        // Show the selected view controller.
-        [self moveToControllerAtIndex:index animated:YES];
-        
-        // Run the action if necessary.
-        void (^action)(void) = self.actions[@(index)];
-        if (action != nil) {
-            action();
-        }
+        [self setSelectedIndex:index animated:YES];
     }
 }
 
