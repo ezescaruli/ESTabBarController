@@ -29,6 +29,10 @@ typedef void (^ESTabBarAction)(void);
 // Defaults to [UIColor lightGrayColor].
 @property (nonatomic, strong) UIColor *separatorLineColor;
 
+// This maked the selected button look with a full alpha, and the non selected
+// ones a bit transparent.
+@property (nonatomic, assign) BOOL highlightsSelectedButton;
+
 
 /**
  Initializes the tab bar with an array of UIImage that will be the icons

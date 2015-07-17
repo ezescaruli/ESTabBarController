@@ -17,6 +17,8 @@
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
 @property (nonatomic, weak) IBOutlet UIView *separatorLine;
 
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *separatorLineHeightConstraint;
+
 @property (nonatomic, strong) NSMutableDictionary *controllers;
 @property (nonatomic, strong) NSMutableDictionary *actions;
 @property (nonatomic, assign) BOOL didSetupInterface;
@@ -254,7 +256,16 @@
         // Deselect all the buttons excepting the selected one.
         for (NSInteger i = 0; i < self.buttons.count; i++) {
             UIButton *button = self.buttons[i];
-            button.selected = (i == index);
+            
+            BOOL selected = (i == index);
+            button.selected = selected;
+            
+            if (self.highlightsSelectedButton && !(self.actions[@(i)] != nil && self.controllers[@(i)] == nil)) {
+                // Only if the selected button highlighting is enabled and
+                // the button either has a controller, or a controller and an
+                // action.
+                button.alpha = selected ? 1.0 : 0.5;
+            }
         }
         
         if (self.selectedIndex >= 0) {
@@ -296,6 +307,7 @@
 - (void)setupSeparatorLine {
     self.separatorLine.backgroundColor = self.separatorLineColor;
     self.separatorLine.hidden = !self.separatorLineVisible;
+    self.separatorLineHeightConstraint.constant = 0.5;
 }
 
 
