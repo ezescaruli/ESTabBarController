@@ -308,9 +308,21 @@
             [controller didMoveToParentViewController:self];
         }
         
-        controller.view.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.controllersContainer addSubview:controller.view];
-        [self setupConstraintsForChildController:controller];
+        if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
+            // Table views have an issue when disabling autoresizing
+            // constraints in iOS 7.
+            // Their width is set to zero initially and then it's not able to
+            // adjust it again, causing constraint conflicts with the cells
+            // inside the table.
+            // For this reason, we just adjust the frame to the container
+            // bounds leaving the autoresizing constraints enabled.
+            [self.controllersContainer addSubview:controller.view];
+            controller.view.frame = self.controllersContainer.bounds;
+        } else {
+            controller.view.translatesAutoresizingMaskIntoConstraints = NO;
+            [self.controllersContainer addSubview:controller.view];
+            [self setupConstraintsForChildController:controller];
+        }
         
         [self moveSelectionIndicatorToIndex:index animated:animated];
         
