@@ -17,7 +17,7 @@
 @property (nonatomic, assign) NSArray *tabIcons;
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
-
+@property (nonatomic, assign) CGFloat buttonsContainerHeightConstraintInitialConstant;
 
 @end
 
@@ -35,6 +35,7 @@
         [self.view addConstraints:[self leftLayoutConstraintsForButtonAtIndex:i]];
         [self.view addConstraints:[self verticalLayoutConstraintsForButtonAtIndex:i]];
         [self.view addConstraint:[self widthLayoutConstraintForButtonAtIndex:i]];
+        [self.view addConstraint:[self heightLayoutConstraintForButtonAtIndex:i]];
     }
 }
 
@@ -98,7 +99,7 @@
     UIButton *button = self.buttons[index];
     
     // The button is sticked to its top and bottom margins.
-    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[button]-(0)-|"
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[button]"
                                                    options:0
                                                    metrics:nil
                                                      views:@{@"button": button}];
@@ -115,6 +116,19 @@
                                         attribute:NSLayoutAttributeWidth
                                        multiplier:1.0 / self.buttons.count
                                          constant:0.0];
+}
+
+
+- (NSLayoutConstraint *)heightLayoutConstraintForButtonAtIndex:(NSInteger)index {
+    UIButton *button = self.buttons[index];
+    
+    return [NSLayoutConstraint constraintWithItem:button
+                                        attribute:NSLayoutAttributeHeight
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                        attribute:NSLayoutAttributeNotAnAttribute
+                                       multiplier:1.0
+                                         constant:self.buttonsContainerHeightConstraintInitialConstant];
 }
 
 

@@ -76,4 +76,17 @@ typedef void (^ESTabBarAction)(void);
 - (void)setButtonTintColor:(UIColor *)color atIndex:(NSInteger)index;
 
 
+/**
+ Hides the bottom bar. Can be animated.
+ */
+- (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated;
+
+
+/**
+ Sets the selected index of the controller, as if pressing one of the tab
+ buttons. Can be animated.
+ */
+- (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
+
+
 @end
