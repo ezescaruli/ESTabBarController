@@ -40,7 +40,8 @@
 
 
 - (instancetype)initWithTabIcons:(NSArray *)tabIcons {
-    self = [self initWithNibName:@"ESTabBarController" bundle:nil];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    self = [self initWithNibName:@"ESTabBarController" bundle:bundle];
     
     if (self != nil) {
         [self initializeWithTabIcons:tabIcons];
