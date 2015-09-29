@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
 @property (nonatomic, assign) CGFloat buttonsContainerHeightConstraintInitialConstant;
+@property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorHeightConstraint;
 
 @end
 
@@ -154,10 +155,13 @@
 
 
 - (NSArray *)heightLayoutConstraintsForIndicator {
-    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator(==3)]"
-                                                   options:0
-                                                   metrics:nil
-                                                     views:@{@"selectionIndicator": self.selectionIndicator}];
+    NSArray *heightConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator(==3)]"
+                                                                         options:0
+                                                                         metrics:nil
+                                                                           views:@{@"selectionIndicator": self.selectionIndicator}];
+    self.selectionIndicatorHeightConstraint = [heightConstraints firstObject];
+    
+    return heightConstraints;
 }
 
 
