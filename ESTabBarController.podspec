@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "ESTabBarController"
-    s.version      = "0.1.1"
+    s.version      = "0.1.2"
     s.license      = "MIT"
     s.summary      = "Custom tab bar controller for iOS."
     s.homepage     = "https://github.com/ezescaruli/ESTabBarController"
