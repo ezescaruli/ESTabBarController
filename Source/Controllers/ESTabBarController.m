@@ -97,6 +97,18 @@
     self.separatorLine.backgroundColor = color;
 }
 
+-(NSArray *)viewControllers
+{
+    NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithCapacity:self.tabIcons.count];
+    for (NSInteger index = 0; index < self.tabIcons.count; index++) {
+        UIViewController* controller = self.controllers[@(index)];
+        if (controller) {
+            [viewControllers addObject:controller];
+        }
+    }
+    return viewControllers;
+}
+
 
 #pragma mark - UIViewController
 
@@ -419,6 +431,5 @@
         animations();
     }
 }
-
 
 @end

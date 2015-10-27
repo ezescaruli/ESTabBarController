@@ -33,6 +33,9 @@ typedef void (^ESTabBarAction)(void);
 // ones a bit transparent.
 @property (nonatomic, assign) BOOL highlightsSelectedButton;
 
+// The current view controller stack.
+@property (nonatomic, copy, readonly) NSArray *viewControllers;
+
 // Color to use for badge text
 // Defaults to [UIColor whiteColor]
 @property (nonatomic, strong) UIColor *badgeTextColor;
