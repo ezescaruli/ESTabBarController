@@ -25,6 +25,8 @@
 @property (nonatomic, assign) BOOL didSetupInterface;
 @property (nonatomic, strong) NSMutableArray *buttons;
 @property (nonatomic, strong) NSMutableSet *highlightedButtonIndexes;
+@property (nonatomic, strong) NSMutableDictionary *badgeValues;
+@property (nonatomic, strong) NSMutableArray *badgeLabels;
 @property (nonatomic, strong) NSArray *tabIcons;
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
@@ -180,6 +182,17 @@
     }
 }
 
+- (void)setBadgeValue:(NSString*)value atIndex:(NSInteger)index
+{
+    NSString* key = [NSString stringWithFormat:@"%ld", (long)index];
+    if (value) {
+        [self.badgeValues setValue:value forKey:key];
+    }
+    else {
+        [self.badgeValues removeObjectForKey:key];
+    }
+    [self updateInterfaceIfNeeded];
+}
 
 #pragma mark - Actions
 
@@ -206,11 +219,18 @@
     self.actions = [NSMutableDictionary dictionaryWithCapacity:tabIcons.count];
     
     self.highlightedButtonIndexes = [NSMutableSet set];
+    self.badgeValues = [NSMutableDictionary dictionaryWithCapacity:tabIcons.count];
     
     // No selected index at first.
     _selectedIndex = -1;
     
     self.separatorLineColor = [UIColor lightGrayColor];
+    
+    self.badgeTextColor = [UIColor whiteColor];
+    self.badgeFont = [UIFont systemFontOfSize:8];
+    self.badgeSize = 16;
+    self.badgeOffset = 12;
+
 }
 
 
@@ -233,12 +253,17 @@
 - (void)setupButtons {
     if (self.buttons == nil) {
         self.buttons = [NSMutableArray arrayWithCapacity:self.tabIcons.count];
+        self.badgeLabels = [NSMutableArray arrayWithCapacity:self.tabIcons.count];
         
         for (NSInteger i = 0; i < self.tabIcons.count; i++) {
             UIButton *button = [self createButtonForIndex:i];
             
             [self.buttonsContainer addSubview:button];
             self.buttons[i] = button;
+            
+            UILabel *badgeLabel = [self createBadgeLabel];
+            [self.buttonsContainer addSubview:badgeLabel];
+            self.badgeLabels[i] = badgeLabel;
         }
         
         [self setupButtonsConstraints];
@@ -259,6 +284,20 @@
     return button;
 }
 
+- (UILabel*)createBadgeLabel
+{
+    UILabel *label = [UILabel new];
+    
+    label.font = self.badgeFont;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = self.selectedColor;
+    label.textColor = self.badgeTextColor ?: [UIColor whiteColor];
+    label.layer.cornerRadius = self.badgeSize / 2;
+    label.layer.masksToBounds = YES;
+    
+    return label;
+}
+
 
 - (void)customizeButtons {
     for (NSInteger i = 0; i < self.tabIcons.count; i++) {
@@ -268,7 +307,16 @@
         [button customizeForTabBarWithImage:self.tabIcons[i]
                               selectedColor:self.selectedColor ?: [UIColor blackColor]
                                 highlighted:isHighlighted];
-
+        
+        UILabel *badgeLabel = self.badgeLabels[i];
+        NSString* badgeValue = [self.badgeValues valueForKey:[NSString stringWithFormat:@"%ld", (long)i]];
+        if (badgeValue) {
+            badgeLabel.text = badgeValue;
+            badgeLabel.hidden = NO;
+        }
+        else {
+            badgeLabel.hidden = YES;
+        }
     }
 }
 

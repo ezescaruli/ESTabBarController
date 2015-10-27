@@ -14,6 +14,7 @@
 @property (nonatomic, weak) UIView *controllersContainer;
 @property (nonatomic, weak) UIView *buttonsContainer;
 @property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, strong) NSMutableArray *badgeLabels;
 @property (nonatomic, assign) NSArray *tabIcons;
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
@@ -36,9 +37,15 @@
         [self.view addConstraints:[self verticalLayoutConstraintsForButtonAtIndex:i]];
         [self.view addConstraint:[self widthLayoutConstraintForButtonAtIndex:i]];
         [self.view addConstraint:[self heightLayoutConstraintForButtonAtIndex:i]];
+        
+        [self.badgeLabels[i] setTranslatesAutoresizingMaskIntoConstraints:NO];
+        
+        [self.view addConstraint:[self horizontalLayoutConstraintsForBadgeLabelAtIndex:i]];
+        [self.view addConstraint:[self verticalLayoutConstraintsForBadgeLabelAtIndex:i]];
+        [self.view addConstraint:[self widthLayoutConstraintForBadgeLabelAtIndex:i]];
+        [self.view addConstraint:[self heightLayoutConstraintForBadgeLabelAtIndex:i]];
     }
 }
-
 
 - (void)setupSelectionIndicatorConstraints {
     self.selectionIndicatorLeadingConstraint = [self leadingLayoutConstraintForIndicator];
@@ -168,5 +175,55 @@
                                                      views:@{@"selectionIndicator": self.selectionIndicator}];
 }
 
+- (NSLayoutConstraint *)widthLayoutConstraintForBadgeLabelAtIndex:(NSInteger)index {
+    UILabel *label = self.badgeLabels[index];
+    
+    return [NSLayoutConstraint constraintWithItem:label
+                                        attribute:NSLayoutAttributeWidth
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                        attribute:NSLayoutAttributeWidth
+                                       multiplier:1.0f
+                                         constant:self.badgeSize];
+}
+
+
+- (NSLayoutConstraint *)heightLayoutConstraintForBadgeLabelAtIndex:(NSInteger)index {
+    UILabel *label = self.badgeLabels[index];
+    
+    return [NSLayoutConstraint constraintWithItem:label
+                                        attribute:NSLayoutAttributeHeight
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                        attribute:NSLayoutAttributeHeight
+                                       multiplier:1.0f
+                                         constant:self.badgeSize];
+}
+
+- (NSLayoutConstraint *)verticalLayoutConstraintsForBadgeLabelAtIndex:(NSInteger)index {
+    UILabel *label = self.badgeLabels[index];
+    UIButton *button = self.buttons[index];
+    
+    return [NSLayoutConstraint constraintWithItem:label
+                                        attribute:NSLayoutAttributeCenterY
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:button
+                                        attribute:NSLayoutAttributeCenterY
+                                       multiplier:1.0
+                                         constant:-self.badgeOffset];
+}
+
+- (NSLayoutConstraint *)horizontalLayoutConstraintsForBadgeLabelAtIndex:(NSInteger)index {
+    UILabel *label = self.badgeLabels[index];
+    UIButton *button = self.buttons[index];
+    
+    return [NSLayoutConstraint constraintWithItem:label
+                                        attribute:NSLayoutAttributeCenterX
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:button
+                                        attribute:NSLayoutAttributeCenterX
+                                       multiplier:1.0
+                                         constant:self.badgeOffset];
+}
 
 @end
