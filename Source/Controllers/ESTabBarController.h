@@ -20,6 +20,9 @@ typedef void (^ESTabBarAction)(void);
 /// Background color for the view that contains the buttons.
 @property (nonatomic, strong) UIColor *buttonsBackgroundColor;
 
+/// The color of the selectedButton background
+@property (nonatomic, strong) UIColor *selectedBackgroundColor;
+
 /// The index (starting from 0) of the view controller being shown.
 @property (nonatomic, readonly) NSInteger selectedIndex;
 
@@ -32,6 +35,12 @@ typedef void (^ESTabBarAction)(void);
 // This maked the selected button look with a full alpha, and the non selected
 // ones a bit transparent.
 @property (nonatomic, assign) BOOL highlightsSelectedButton;
+
+
+// Array with all widths of buttons
+@property (nonatomic,strong) NSMutableArray *widthPercentages;
+
+@property (nonatomic,assign) BOOL indicatorSizeRationalToIcon;
 
 
 /**
@@ -87,6 +96,8 @@ typedef void (^ESTabBarAction)(void);
  buttons. Can be animated.
  */
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
+
+- (void)setIconImageAtIndex:(NSInteger)selectedIndex icon:(UIImage *)icon;
 
 
 @end
