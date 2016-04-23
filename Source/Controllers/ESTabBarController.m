@@ -189,7 +189,6 @@
 }
 
 - (void)setIconImageAtIndex:(NSInteger)selectedIndex icon:(UIImage *)icon {
-    //[self.tabIcons replaceObjectAtIndex:selectedIndex withObject:icon];
     NSMutableArray *mutablearr = [self.tabIcons mutableCopy];
     mutablearr[selectedIndex] = icon;
     self.tabIcons = [NSArray arrayWithArray:mutablearr];
