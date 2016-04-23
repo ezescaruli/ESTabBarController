@@ -37,9 +37,10 @@ typedef void (^ESTabBarAction)(void);
 @property (nonatomic, assign) BOOL highlightsSelectedButton;
 
 
-// Array with all widths of buttons
+/// Array with all widths of the buttons. Enables to determine the width of each button in the tab bar.
 @property (nonatomic,strong) NSMutableArray *widthPercentages;
 
+/// Sets the small indicator size to be rational to the size of the icon.
 @property (nonatomic,assign) BOOL indicatorSizeRationalToIcon;
 
 
