@@ -97,6 +97,9 @@ typedef void (^ESTabBarAction)(void);
  */
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
 
+/**
+ Changes icon image at specific index.
+ */
 - (void)setIconImageAtIndex:(NSInteger)selectedIndex icon:(UIImage *)icon;
 
 
