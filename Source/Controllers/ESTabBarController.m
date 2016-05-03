@@ -77,6 +77,12 @@
     selectedButton.selected = YES;
 }
 
+- (void)setButtonsBackgroundColor:(UIColor *)buttonsBackgroundColor {
+    if (_buttonsBackgroundColor != buttonsBackgroundColor) {
+        _buttonsBackgroundColor = buttonsBackgroundColor;
+        [self updateInterfaceIfNeeded];
+    }
+}
 
 - (void)setSeparatorLineVisible:(BOOL)visible {
     if (_separatorLineVisible != visible) {
