@@ -127,7 +127,19 @@
 
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index {
+    UIViewController *currentViewController = self.controllers[@(index)];
+    
+    if (currentViewController != nil) {
+        [currentViewController removeFromParentViewController];
+    }
+    
     self.controllers[@(index)] = viewController;
+    
+    if (index == self.selectedIndex) {
+        // If the index is the selected one, we have to update the view
+        // controller at that index so that the change is reflected.
+        [self moveToControllerAtIndex:index animated:NO];
+    }
 }
 
 
@@ -176,8 +188,9 @@
 
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated {
-    // Show the selected view controller.
-    [self moveToControllerAtIndex:selectedIndex animated:animated];
+    if (self.selectedIndex != selectedIndex) {
+        [self moveToControllerAtIndex:selectedIndex animated:animated];
+    }
     
     // Run the action if necessary.
     void (^action)(void) = self.actions[@(selectedIndex)];
@@ -280,11 +293,6 @@
 
 
 - (void)moveToControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
-    if (self.selectedIndex == index) {
-        // Nothing to do.
-        return;
-    }
-    
     UIViewController *controller = self.controllers[@(index)];
     
     if (controller != nil) {
