@@ -77,6 +77,12 @@
         [weakSelf showAlertViewWithTitle:@"Globe"
                                  message:@"You have chosen the globe view controller."];
     } atIndex:4];
+    
+//    tabBarController.badgeFont = [UIFont systemFontOfSize:10 weight:2];
+//    tabBarController.badgeOffset = 10;
+//    tabBarController.badgeSize = 20;
+//    tabBarController.badgeTextColor = [UIColor colorWithHexString:@"#F6EBE0"];
+    [tabBarController setBadgeValue:@"99" atIndex:0];
 }
 
 

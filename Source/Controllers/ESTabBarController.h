@@ -33,6 +33,25 @@ typedef void (^ESTabBarAction)(void);
 // ones a bit transparent.
 @property (nonatomic, assign) BOOL highlightsSelectedButton;
 
+// The current view controller stack.
+@property (nonatomic, copy, readonly) NSArray *viewControllers;
+
+// Color to use for badge text
+// Defaults to [UIColor whiteColor]
+@property (nonatomic, strong) UIColor *badgeTextColor;
+
+// Font for badge text
+// Defaults to [UIFont systemFontOfSize:8]
+@property (nonatomic, strong) UIFont *badgeFont;
+
+// Badge width and height in pt
+// Defaults to 16
+@property (nonatomic, assign) NSInteger badgeSize;
+
+// Badge offset from button's center (up and right)
+// Defaults to 12
+@property (nonatomic, assign) NSInteger badgeOffset;
+
 
 /**
  Initializes the tab bar with an array of UIImage that will be the icons
@@ -88,5 +107,10 @@ typedef void (^ESTabBarAction)(void);
  */
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
 
+/**
+ Sets the badge text value.
+ Set nil to remove badge.
+ */
+- (void)setBadgeValue:(NSString*)value atIndex:(NSInteger)index;
 
 @end
