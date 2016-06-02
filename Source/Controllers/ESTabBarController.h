@@ -33,6 +33,10 @@ typedef void (^ESTabBarAction)(void);
 // ones a bit transparent.
 @property (nonatomic, assign) BOOL highlightsSelectedButton;
 
+// The width of the selection indicator that moves across buttons when
+// selecting them. Defaults to 3.0.
+@property (nonatomic, assign) CGFloat selectionIndicatorHeight;
+
 
 /**
  Initializes the tab bar with an array of UIImage that will be the icons

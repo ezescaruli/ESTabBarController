@@ -29,6 +29,7 @@
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
 @property (nonatomic, assign) CGFloat buttonsContainerHeightConstraintInitialConstant;
+@property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorHeightConstraint;
 
 @end
 
@@ -99,6 +100,15 @@
     }
     
     self.separatorLine.backgroundColor = color;
+}
+
+
+- (void)setSelectionIndicatorHeight:(CGFloat)selectionIndicatorHeight {
+    if (_selectionIndicatorHeight != selectionIndicatorHeight && selectionIndicatorHeight > 0) {
+        _selectionIndicatorHeight = selectionIndicatorHeight;
+    }
+    
+    self.selectionIndicatorHeightConstraint.constant = selectionIndicatorHeight;
 }
 
 
@@ -363,6 +373,7 @@
     self.separatorLine.backgroundColor = self.separatorLineColor;
     self.separatorLine.hidden = !self.separatorLineVisible;
     self.separatorLineHeightConstraint.constant = 0.5;
+    self.selectionIndicatorHeightConstraint.constant = self.selectionIndicatorHeight;
 }
 
 
