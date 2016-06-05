@@ -132,6 +132,21 @@
 }
 
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    // When rotating, have to update the selection indicator leading to match
+    // the selected button x, that might have changed because of the rotation.
+    
+    CGFloat selectedButtonX = [self.buttons[self.selectedIndex] frame].origin.x;
+    
+    if (self.selectionIndicatorLeadingConstraint.constant != selectedButtonX) {
+        [UIView animateWithDuration:0.1 animations:^{
+            self.selectionIndicatorLeadingConstraint.constant = selectedButtonX;
+            [self.view layoutIfNeeded];
+        }];
+    }
+}
+
+
 #pragma mark - ESTabBarController
 
 
