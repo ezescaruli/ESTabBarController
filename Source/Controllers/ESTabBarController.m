@@ -168,6 +168,11 @@
 }
 
 
+- (UIViewController *)viewControllerAtIndex:(NSInteger)index {
+    return self.controllers[@(index)];
+}
+
+
 - (void)setAction:(ESTabBarAction)action
           atIndex:(NSInteger)index {
     self.actions[@(index)] = action;

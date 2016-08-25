@@ -59,6 +59,11 @@ typedef void (^ESTabBarAction)(void);
                   atIndex:(NSInteger)index;
 
 /**
+ Gets the view controller at a specific index.
+ */
+- (UIViewController *)viewControllerAtIndex:(NSInteger)index;
+
+/**
  Sets an action to be fired when tapping a button at a specific index. If there
  is also a view controller set at that index, the action is fired immediately
  after showing it.
