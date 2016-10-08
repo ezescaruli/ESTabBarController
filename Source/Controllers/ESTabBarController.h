@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ESTabBarDelegate.h"
 
 typedef void (^ESTabBarAction)(void);
 
 
 @interface ESTabBarController : UIViewController
 
+@property (nonatomic, assign) id<ESTabBarDelegate> delegate;
 
 /// Color to use for when a tab bar button is selected.
 @property (nonatomic, strong) UIColor *selectedColor;
