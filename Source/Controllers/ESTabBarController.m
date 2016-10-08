@@ -9,9 +9,12 @@
 #import "ESTabBarController.h"
 #import "UIButton+ESTabBar.h"
 #import "ESTabBarController+Autolayout.h"
+#import "ESTabBarDelegate.h"
 
 
-@interface ESTabBarController ()
+@interface ESTabBarController:NSObject ()
+
+@property (nonatomic, weak) id<ESTabBarDelegate> delegate;
 
 @property (nonatomic, weak) IBOutlet UIView *controllersContainer;
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
@@ -297,7 +300,7 @@
 
 - (void)moveToControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
     if (self.selectedIndex == index) {
-        // Nothing to do.
+        [self delegate tabClickedTwice:index]
         return;
     }
 
