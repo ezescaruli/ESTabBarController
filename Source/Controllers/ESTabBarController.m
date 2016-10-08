@@ -14,7 +14,7 @@
 
 @interface ESTabBarController ()
 
-@property (nonatomic, weak) id<ESTabBarDelegate> delegate;
+@property (nonatomic, assign) id<ESTabBarDelegate> delegate;
 
 @property (nonatomic, weak) IBOutlet UIView *controllersContainer;
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
