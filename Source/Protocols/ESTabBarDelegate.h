@@ -1,4 +1,4 @@
 #import <UIKit/UIKit.h>
 @protocol ESTabBarDelegate<NSObject>
-- (NSInteger)tabClickedTwice;
+- (void)tabClickedTwice:(NSInteger)index;
 @end
