@@ -300,7 +300,7 @@
 
 - (void)moveToControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
     if (self.selectedIndex == index) {
-        [self delegate tabClickedTwice:index]
+        [self.delegate tabClickedTwice:index];
         return;
     }
 
