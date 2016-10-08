@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
-@protocol ESTabBarDelegate <NSObject>
+#import <UIKit/UIKit.h>
+@protocol ESTabBarDelegate
 - (NSInteger)tabClickedTwice;
 @end

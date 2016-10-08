@@ -12,7 +12,7 @@
 #import "ESTabBarDelegate.h"
 
 
-@interface ESTabBarController:NSObject ()
+@interface ESTabBarController ()
 
 @property (nonatomic, weak) id<ESTabBarDelegate> delegate;
 
