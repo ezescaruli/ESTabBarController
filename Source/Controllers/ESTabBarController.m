@@ -144,6 +144,9 @@
     [self updateInterfaceIfNeeded];
 }
 
+- (UIView *)getButtonsContianer {
+    return self.buttonsContainer;
+}
 
 - (void)setButtonTintColor:(UIColor *)color atIndex:(NSInteger)index {
     if (![self.highlightedButtonIndexes containsObject:@(index)]) {
