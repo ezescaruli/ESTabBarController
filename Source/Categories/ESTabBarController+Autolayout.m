@@ -168,18 +168,16 @@
 }
 
 
-//TODO: BEFORE CREATING A FULL REQUEST WITH THE FORK RETURN THE VALUE HERE TO THREE
 - (NSArray *)heightLayoutConstraintsForIndicator {
-    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator(==2)]"
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator(==3)]"
                                                    options:0
                                                    metrics:nil
                                                      views:@{@"selectionIndicator": self.selectionIndicator}];
 }
 
 
-//TODO: BEFORE CREATING A FULL REQUEST WITH THE FORK RETURN THE VALUE HERE TO ZERO
 - (NSArray *)bottomLayoutConstraintsForIndicator {
-    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator]-(2)-|"
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator]-(0)-|"
                                                    options:0
                                                    metrics:nil
                                                      views:@{@"selectionIndicator": self.selectionIndicator}];
