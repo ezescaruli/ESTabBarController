@@ -39,6 +39,10 @@ typedef void (^ESTabBarAction)(void);
 // ones a bit transparent.
 @property (nonatomic, assign) BOOL highlightsSelectedButton;
 
+// The width of the selection indicator that moves across buttons when
+// selecting them. Defaults to 3.0.
+@property (nonatomic, assign) CGFloat selectionIndicatorHeight;
+
 
 /// Array with all widths of the buttons. Enables to determine the width of each button in the tab bar.
 @property (nonatomic,strong) NSMutableArray *widthPercentages;

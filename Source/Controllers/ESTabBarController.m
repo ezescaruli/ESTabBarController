@@ -30,6 +30,7 @@
 @property (nonatomic, strong) UIView *selectionIndicator;
 @property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorLeadingConstraint;
 @property (nonatomic, assign) CGFloat buttonsContainerHeightConstraintInitialConstant;
+@property (nonatomic, strong) NSLayoutConstraint *selectionIndicatorHeightConstraint;
 
 @end
 
@@ -41,7 +42,7 @@
 
 
 - (instancetype)initWithTabIcons:(NSArray *)tabIcons {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *bundle = [NSBundle bundleForClass:[ESTabBarController class]];
     self = [self initWithNibName:@"ESTabBarController" bundle:bundle];
 
     if (self != nil) {
@@ -86,6 +87,12 @@
   [self updateInterfaceIfNeeded];
 }
 
+- (void)setButtonsBackgroundColor:(UIColor *)buttonsBackgroundColor {
+    if (_buttonsBackgroundColor != buttonsBackgroundColor) {
+        _buttonsBackgroundColor = buttonsBackgroundColor;
+        [self updateInterfaceIfNeeded];
+    }
+}
 
 - (void)setSeparatorLineVisible:(BOOL)visible {
     if (_separatorLineVisible != visible) {
@@ -102,6 +109,15 @@
     }
 
     self.separatorLine.backgroundColor = color;
+}
+
+
+- (void)setSelectionIndicatorHeight:(CGFloat)selectionIndicatorHeight {
+    if (_selectionIndicatorHeight != selectionIndicatorHeight && selectionIndicatorHeight > 0) {
+        _selectionIndicatorHeight = selectionIndicatorHeight;
+    }
+
+    self.selectionIndicatorHeightConstraint.constant = selectionIndicatorHeight;
 }
 
 
@@ -125,12 +141,39 @@
 }
 
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    // When rotating, have to update the selection indicator leading to match
+    // the selected button x, that might have changed because of the rotation.
+
+    CGFloat selectedButtonX = [self.buttons[self.selectedIndex] frame].origin.x;
+
+    if (self.selectionIndicatorLeadingConstraint.constant != selectedButtonX) {
+        [UIView animateWithDuration:0.1 animations:^{
+            self.selectionIndicatorLeadingConstraint.constant = selectedButtonX;
+            [self.view layoutIfNeeded];
+        }];
+    }
+}
+
+
 #pragma mark - ESTabBarController
 
 
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index {
+    UIViewController *currentViewController = self.controllers[@(index)];
+
+    if (currentViewController != nil) {
+        [currentViewController removeFromParentViewController];
+    }
+
     self.controllers[@(index)] = viewController;
+
+    if (index == self.selectedIndex) {
+        // If the index is the selected one, we have to update the view
+        // controller at that index so that the change is reflected.
+        [self moveToControllerAtIndex:index animated:NO];
+    }
 }
 
 
@@ -299,9 +342,7 @@
 - (void)moveToControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
     if (self.selectedIndex == index) {
         [self.delegate tabClickedTwice:index];
-        return;
     }
-
     UIViewController *controller = self.controllers[@(index)];
 
     if (controller != nil) {
@@ -372,6 +413,7 @@
     self.separatorLine.backgroundColor = self.separatorLineColor;
     self.separatorLine.hidden = !self.separatorLineVisible;
     self.separatorLineHeightConstraint.constant = 0.5;
+    self.selectionIndicatorHeightConstraint.constant = self.selectionIndicatorHeight;
 }
 
 
