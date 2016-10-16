@@ -24,7 +24,7 @@ typedef void (^ESTabBarAction)(void);
 @property (nonatomic, strong) UIColor *buttonsBackgroundColor;
 
 /// The color of the highlighted button background
-@property (nonatomic, strong) UIColor *selectedBackgroundColor;
+@property (nonatomic, strong) UIColor *highlightedBackgroundColor;
 
 /// The index (starting from 0) of the view controller being shown.
 @property (nonatomic, readonly) NSInteger selectedIndex;

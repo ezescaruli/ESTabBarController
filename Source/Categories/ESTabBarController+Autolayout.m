@@ -170,18 +170,18 @@
 
 
 - (NSArray *)heightLayoutConstraintsForIndicator {
-    NSArray *heightConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator(==3)]"
+    NSArray *heightConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator(==2)]"
                                                                          options:0
                                                                          metrics:nil
                                                                            views:@{@"selectionIndicator": self.selectionIndicator}];
     self.selectionIndicatorHeightConstraint = [heightConstraints firstObject];
-    
+
     return heightConstraints;
 }
 
 
 - (NSArray *)bottomLayoutConstraintsForIndicator {
-    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator]-(0)-|"
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator]-(-2)-|"
                                                    options:0
                                                    metrics:nil
                                                      views:@{@"selectionIndicator": self.selectionIndicator}];

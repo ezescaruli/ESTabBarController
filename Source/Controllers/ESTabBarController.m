@@ -79,9 +79,9 @@
     selectedButton.selected = YES;
 }
 
-- (void)setSelectedBackgroundColor:(UIColor *)color {
-  if (_selectedBackgroundColor != color) {
-      _selectedBackgroundColor = color;
+- (void)sethighlightedBackgroundColor:(UIColor *)color {
+  if (_highlightedBackgroundColor != color) {
+      _highlightedBackgroundColor = color;
   }
 
   [self updateInterfaceIfNeeded];
@@ -335,7 +335,7 @@
   [button customizeForTabBarWithImage:self.tabIcons[index]
                         selectedColor:self.selectedColor ?: [UIColor blackColor]
                           highlighted:isHighlighted
-                          backgroundColor:self.selectedBackgroundColor ?: nil];
+                          backgroundColor:self.highlightedBackgroundColor ?: nil];
 }
 
 
