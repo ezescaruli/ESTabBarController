@@ -181,7 +181,7 @@
 
 
 - (NSArray *)bottomLayoutConstraintsForIndicator {
-    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator]-(-2)-|"
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"V:[selectionIndicator]-(2)-|"
                                                    options:0
                                                    metrics:nil
                                                      views:@{@"selectionIndicator": self.selectionIndicator}];
