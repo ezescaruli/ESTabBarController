@@ -14,6 +14,7 @@ typedef void (^ESTabBarAction)(void);
 
 @interface ESTabBarController : UIViewController
 
+/// Delegate to expose some events from the tab bar
 @property (nonatomic, assign) id<ESTabBarDelegate> delegate;
 
 /// Color to use for when a tab bar button is selected.
@@ -22,7 +23,7 @@ typedef void (^ESTabBarAction)(void);
 /// Background color for the view that contains the buttons.
 @property (nonatomic, strong) UIColor *buttonsBackgroundColor;
 
-/// The color of the highlited button background
+/// The color of the highlighted button background
 @property (nonatomic, strong) UIColor *selectedBackgroundColor;
 
 /// The index (starting from 0) of the view controller being shown.
@@ -43,7 +44,7 @@ typedef void (^ESTabBarAction)(void);
 @property (nonatomic,strong) NSMutableArray *widthPercentages;
 
 /// Sets the small indicator size to be rational to the size of the icon.
-@property (nonatomic,assign) BOOL indicatorSizeRationalToIcon;
+@property (nonatomic,assign) BOOL indicatorSizeRelativeToIcon;
 
 
 /**
@@ -66,6 +67,9 @@ typedef void (^ESTabBarAction)(void);
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index;
 
+/**
+ Gets the button container view. Useful for onboarding for tab bar and etc.
+ */
 - (UIView *)getButtonsContianer;
 
 /**

@@ -37,7 +37,6 @@
     }
     for (NSInteger i = 0; i < self.tabIcons.count; i++) {
         [self.buttons[i] setTranslatesAutoresizingMaskIntoConstraints:NO];
-
         [self.view addConstraints:[self leftLayoutConstraintsForButtonAtIndex:i]];
         [self.view addConstraints:[self verticalLayoutConstraintsForButtonAtIndex:i]];
         [self.view addConstraint:[self widthLayoutConstraintForButtonAtIndex:i]];
@@ -48,7 +47,6 @@
 
 - (void)setupSelectionIndicatorConstraints {
     self.selectionIndicatorLeadingConstraint = [self leadingLayoutConstraintForIndicator];
-
     [self.buttonsContainer addConstraint:self.selectionIndicatorLeadingConstraint];
     [self.buttonsContainer addConstraints:[self widthLayoutConstraintsForIndicator]];
     [self.buttonsContainer addConstraints:[self heightLayoutConstraintsForIndicator]];
@@ -58,13 +56,11 @@
 
 - (void)setupConstraintsForChildController:(UIViewController *)controller {
     NSDictionary *views = @{@"view": controller.view};
-
     NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[view]-0-|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:views];
     [self.controllersContainer addConstraints:horizontalConstraints];
-
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
                                                                            options:0
                                                                            metrics:nil
@@ -79,7 +75,6 @@
 - (NSArray *)leftLayoutConstraintsForButtonAtIndex:(NSInteger)index {
     UIButton *button = self.buttons[index];
     NSArray *leftConstraints;
-
     if (index == 0) {
         // First button. Stick it to its left margin.
         leftConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-(0)-[button]"
@@ -89,21 +84,18 @@
     } else {
         NSDictionary *views = @{@"previousButton": self.buttons[index - 1],
                                 @"button": button};
-
         // Stick the button to the previous one.
         leftConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[previousButton]-(0)-[button]"
                                                                   options:0
                                                                   metrics:nil
                                                                     views:views];
     }
-
     return leftConstraints;
 }
 
 
 - (NSArray *)verticalLayoutConstraintsForButtonAtIndex:(NSInteger)index {
     UIButton *button = self.buttons[index];
-
     // The button is sticked to its top and bottom margins.
     return [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[button]"
                                                    options:0
@@ -131,7 +123,6 @@
 
 - (NSLayoutConstraint *)heightLayoutConstraintForButtonAtIndex:(NSInteger)index {
     UIButton *button = self.buttons[index];
-
     return [NSLayoutConstraint constraintWithItem:button
                                         attribute:NSLayoutAttributeHeight
                                         relatedBy:NSLayoutRelationEqual
@@ -143,22 +134,21 @@
 
 
 - (NSLayoutConstraint *)leadingLayoutConstraintForIndicator {
-    if(self.indicatorSizeRationalToIcon){
+    if(self.indicatorSizeRelativeToIcon){
         return [NSLayoutConstraint constraintWithItem:self.selectionIndicator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.buttons[0] attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
     } else {
         NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-(0)-[selectionIndicator]"
                                                                                                    options:0
                                                                                                    metrics:nil
                                                                                                      views:@{@"selectionIndicator": self.selectionIndicator}];
-                                
         return [constraints firstObject];
     }
-    
+
 }
 
 
 - (NSArray *)widthLayoutConstraintsForIndicator {
-    if(self.indicatorSizeRationalToIcon){
+    if(self.indicatorSizeRelativeToIcon){
         return @[[NSLayoutConstraint constraintWithItem:self.selectionIndicator
                                             attribute:NSLayoutAttributeWidth
                                             relatedBy:NSLayoutRelationEqual
@@ -169,7 +159,6 @@
     } else {
          NSDictionary *views = @{@"button": self.buttons[0],
                                  @"selectionIndicator": self.selectionIndicator};
-        
          return [NSLayoutConstraint constraintsWithVisualFormat:@"[selectionIndicator(==button)]"
                                                         options:0
                                                         metrics:nil
