@@ -15,6 +15,7 @@
 
 @property (nonatomic, weak) IBOutlet UIView *controllersContainer;
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
+@property (nonatomic, weak) IBOutlet UIView *safeAreaBottomInsetFillView;
 @property (nonatomic, weak) IBOutlet UIView *separatorLine;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *separatorLineHeightConstraint;
@@ -290,6 +291,7 @@
     
     [self customizeButtons];
     self.buttonsContainer.backgroundColor = self.buttonsBackgroundColor ?: [UIColor lightGrayColor];
+    self.safeAreaBottomInsetFillView.backgroundColor = self.buttonsBackgroundColor ?: [UIColor lightGrayColor];
 }
 
 
