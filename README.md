@@ -1,7 +1,6 @@
 ESTabBarController
 ========================
 
-[![Build Status](https://api.travis-ci.org/ezescaruli/ESTabBarController.svg?branch=master)](https://travis-ci.org/ezescaruli/ESTabBarController)
 ![Pod Platform](http://img.shields.io/cocoapods/v/ESTabBarController.svg?style=flat)
 
 `ESTabBarController` is a custom tab bar controller for iOS. It has a tab indicator that moves animated along the bar when switching between tabs. It also provides the capability of running actions associated with the tab bar buttons.
