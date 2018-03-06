@@ -7,18 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ESTabBarDelegate.h"
 
 typedef void (^ESTabBarAction)(void);
 
 
 @interface ESTabBarController : UIViewController
 
+/// Delegate to expose some events from the tab bar
+@property (nonatomic, assign) id<ESTabBarDelegate> delegate;
 
 /// Color to use for when a tab bar button is selected.
 @property (nonatomic, strong) UIColor *selectedColor;
 
 /// Background color for the view that contains the buttons.
 @property (nonatomic, strong) UIColor *buttonsBackgroundColor;
+
+/// The color of the highlighted button background
+@property (nonatomic, strong) UIColor *highlightedBackgroundColor;
 
 /// The index (starting from 0) of the view controller being shown.
 @property (nonatomic, readonly) NSInteger selectedIndex;
@@ -36,6 +42,13 @@ typedef void (^ESTabBarAction)(void);
 // The width of the selection indicator that moves across buttons when
 // selecting them. Defaults to 3.0.
 @property (nonatomic, assign) CGFloat selectionIndicatorHeight;
+
+
+/// Array with all widths of the buttons. Enables to determine the width of each button in the tab bar.
+@property (nonatomic,strong) NSMutableArray *widthPercentages;
+
+/// Sets the small indicator size to be rational to the size of the icon.
+@property (nonatomic,assign) BOOL indicatorSizeRelativeToIcon;
 
 
 /**
@@ -57,6 +70,11 @@ typedef void (^ESTabBarAction)(void);
  */
 - (void)setViewController:(UIViewController *)viewController
                   atIndex:(NSInteger)index;
+
+/**
+ Gets the button container view. Useful for onboarding for tab bar and etc.
+ */
+- (UIView *)getButtonsContianer;
 
 /**
  Sets an action to be fired when tapping a button at a specific index. If there
@@ -91,6 +109,11 @@ typedef void (^ESTabBarAction)(void);
  buttons. Can be animated.
  */
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
+
+/**
+ Changes icon image at specific index.
+ */
+- (void)setIconImageAtIndex:(NSInteger)selectedIndex icon:(UIImage *)icon;
 
 
 @end

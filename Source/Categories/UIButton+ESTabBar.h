@@ -13,6 +13,7 @@
 
 - (void)customizeForTabBarWithImage:(UIImage *)image
                       selectedColor:(UIColor *)selectedColor
-                        highlighted:(BOOL)highlighted;
+                        highlighted:(BOOL)highlighted
+                        backgroundColor:(UIColor *)backgroundColor;
 
 @end
